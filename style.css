@@ -57,10 +57,7 @@ footer {
 }
 
 /* Categories Section */
-section.bg-light .p-3 {
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-section.bg-light .p-3:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+.category-item.active {
+  background-color: #ff5722 !important;
+  color: white !important;
 }
