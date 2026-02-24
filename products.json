@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Mechanical Keyboard",
+    "description": "High-quality mechanical keyboard with RGB lights.",
+    "image": "https://via.placeholder.com/300x200.png?text=Keyboard",
+    "link": "#"
+  },
+  {
+    "name": "Wireless Mouse",
+    "description": "Ergonomic wireless mouse for smooth gaming and work.",
+    "image": "https://via.placeholder.com/300x200.png?text=Mouse",
+    "link": "#"
+  },
+  {
+    "name": "Smartwatch",
+    "description": "Track your fitness and notifications easily.",
+    "image": "https://via.placeholder.com/300x200.png?text=Smartwatch",
+    "link": "#"
+  },
+  {
+    "name": "Phone Stand",
+    "description": "Adjustable stand for your phone or tablet.",
+    "image": "https://via.placeholder.com/300x200.png?text=Phone+Stand",
+    "link": "#"
+  },
+  {
+    "name": "Bluetooth Speaker",
+    "description": "Portable speaker with powerful sound.",
+    "image": "https://via.placeholder.com/300x200.png?text=Speaker",
+    "link": "#"
+  },
+  {
+    "name": "Headphones",
+    "description": "Noise-cancelling over-ear headphones.",
+    "image": "https://via.placeholder.com/300x200.png?text=Headphones",
+    "link": "#"
+  },
+  {
+    "name": "USB-C Hub",
+    "description": "Expand your laptop ports with this hub.",
+    "image": "https://via.placeholder.com/300x200.png?text=USB-C+Hub",
+    "link": "#"
+  },
+  {
+    "name": "Laptop Stand",
+    "description": "Ergonomic laptop stand for comfortable typing.",
+    "image": "https://via.placeholder.com/300x200.png?text=Laptop+Stand",
+    "link": "#"
+  }
+]
