@@ -61,3 +61,10 @@ footer {
   background-color: #ff5722 !important;
   color: white !important;
 }
+
+/* Navbar Highlighting */
+.navbar-nav .nav-link.active {
+  background-color: #ff5722 !important;
+  color: white !important;
+  border-radius: 0.25rem;
+}
