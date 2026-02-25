@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Deals Scout PH | Best Affiliate Products & Reviews</title>
-  <link rel="icon" type="image/png" href="assets/images/fav.png"> 
+  <link rel="icon" type="image/png" href="assets/images/faviconnew.png"> 
 
   <!-- Basic SEO -->
   <meta name="description" content="Discover top deals on gadgets, accessories, and more. Read reviews, guides, and find the best products for your needs.">
@@ -300,6 +300,23 @@
       border-color: var(--orange);
     }
 
+    /* Sample / placeholder badge */
+    .sample-badge {
+      position: absolute;
+      bottom: 8px;
+      right: 8px;
+      background: rgba(26,26,46,0.82);
+      color: #fff;
+      font-size: 0.6rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      backdrop-filter: blur(4px);
+      z-index: 3;
+    }
+
     /* Best sellers label */
     .bestseller-label {
       position: absolute;
@@ -551,8 +568,17 @@
     <strong>Affiliate Disclosure:</strong> We may earn commissions from purchases made through our Shopee affiliate links. This helps support our site and allows us to bring you more content.
   </div>
 
+  <!-- ── REVIEWER NOTE (remove after affiliate approval) ── -->
+  <div id="reviewer-note" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color: #fff; padding: 10px 20px; font-size: 0.78rem; text-align: center; display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: wrap;">
+    <span style="background: #ee4d2d; color: #fff; font-weight: 700; font-size: 0.68rem; padding: 2px 10px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.06em;">📋 For Reviewers</span>
+    <span style="opacity: 0.9;">Product listings currently use <strong>sample/placeholder data</strong> for demonstration purposes.</span>
+    <span style="opacity: 0.7;">·</span>
+    <span style="opacity: 0.9;">Upon affiliate program approval, all products will be replaced with <strong>real Shopee affiliate links</strong> and verified product details.</span>
+    <button onclick="document.getElementById('reviewer-note').style.display='none'" style="background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.25); color: #fff; border-radius: 6px; padding: 2px 10px; font-size: 0.72rem; cursor: pointer; margin-left: 6px; transition: background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.25)'" onmouseout="this.style.background='rgba(255,255,255,0.15)'">Dismiss ✕</button>
+  </div>
+
   <!-- Hero Section -->
-  <header id="hero" class="text-center py-5" style="background-image: url('assets/images/herobg.jpg'); background-size: cover; background-position: center; position: relative; min-height: 400px; display: flex; align-items: center;">
+  <header id="hero" class="text-center py-5" style="background-image: url('assets/images/shopee2.jpg'); background-size: cover; background-position: center; position: relative; min-height: 400px; display: flex; align-items: center;">
     <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5);"></div>
     <div class="container" style="position: relative; z-index: 1; color: white;">
       <h1 class="fw-bold">Top Deals in the Philippines</h1>
@@ -1312,6 +1338,14 @@
     });
 
     document.addEventListener('DOMContentLoaded', function () {
+
+      /* ── Sample badge on featured product cards ── */
+      document.querySelectorAll('#featured-deals .product-card .img-wrap').forEach(wrap => {
+        const badge = document.createElement('span');
+        badge.className = 'sample-badge';
+        badge.textContent = 'Sample';
+        wrap.appendChild(badge);
+      });
 
       /* ══════════════════════════════════════
          2. PRODUCT IMAGE SKELETON (img-wrap)
