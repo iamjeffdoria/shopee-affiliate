@@ -27,7 +27,7 @@
 
   <!-- Bootstrap & Fonts -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
 
@@ -44,6 +44,281 @@
     }
   }
   </script>
+
+  <style>
+    :root {
+      --orange: #ee4d2d;
+      --orange-light: #ff6b4a;
+      --orange-pale: #fff4f2;
+      --dark: #1a1a2e;
+      --gray-soft: #f8f9fa;
+      --text-muted: #6c757d;
+      --card-radius: 16px;
+      --shadow-sm: 0 2px 12px rgba(0,0,0,0.07);
+      --shadow-hover: 0 12px 40px rgba(238,77,45,0.18);
+    }
+
+    body { font-family: 'Poppins', sans-serif; }
+
+    /* ── PRODUCT CARD ── */
+    .product-card {
+      background: #fff;
+      border-radius: var(--card-radius);
+      overflow: hidden;
+      border: 1.5px solid #f0f0f0;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.28s cubic-bezier(.34,1.56,.64,1), box-shadow 0.28s ease, border-color 0.28s ease;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .product-card:hover {
+      transform: translateY(-7px);
+      box-shadow: var(--shadow-hover);
+      border-color: #ffd0c7;
+    }
+
+    /* Image wrapper */
+    .product-card .img-wrap {
+      position: relative;
+      overflow: hidden;
+      background: var(--orange-pale);
+      aspect-ratio: 1 / 1;
+    }
+
+    .product-card .img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .product-card:hover .img-wrap img {
+      transform: scale(1.07);
+    }
+
+    /* Category badge on image */
+    .product-card .cat-badge {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: rgba(255,255,255,0.92);
+      color: var(--orange);
+      font-size: 0.68rem;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(238,77,45,0.15);
+    }
+
+    /* Wishlist icon */
+    .product-card .wishlist-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 32px;
+      height: 32px;
+      background: rgba(255,255,255,0.92);
+      border: none;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ccc;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: color 0.2s, background 0.2s;
+      backdrop-filter: blur(4px);
+    }
+    .product-card .wishlist-btn:hover { color: var(--orange); background: #fff; }
+
+    /* Card body */
+    .product-card .card-body {
+      padding: 14px 16px 16px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .product-card .card-title {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #222;
+      margin-bottom: 5px;
+      line-height: 1.45;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .product-card .card-text {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+      line-height: 1.5;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      flex: 1;
+    }
+
+    /* Star rating */
+    .product-card .stars {
+      color: #f8a400;
+      font-size: 0.72rem;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 3px;
+    }
+    .product-card .stars span {
+      color: var(--text-muted);
+      font-size: 0.7rem;
+      margin-left: 4px;
+    }
+
+    /* Price row */
+    .product-card .price-row {
+      display: flex;
+      align-items: baseline;
+      gap: 7px;
+      margin-bottom: 12px;
+    }
+    .product-card .price {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--orange);
+    }
+    .product-card .price-old {
+      font-size: 0.75rem;
+      color: #bbb;
+      text-decoration: line-through;
+    }
+    .product-card .discount-tag {
+      font-size: 0.65rem;
+      font-weight: 700;
+      background: var(--orange-pale);
+      color: var(--orange);
+      padding: 2px 7px;
+      border-radius: 4px;
+    }
+
+    /* Buy Now button */
+    .product-card .btn-buy {
+      background: linear-gradient(135deg, var(--orange) 0%, var(--orange-light) 100%);
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      padding: 9px 14px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      transition: opacity 0.2s, transform 0.15s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      text-decoration: none;
+    }
+    .product-card .btn-buy:hover {
+      opacity: 0.9;
+      transform: scale(1.02);
+      color: #fff;
+    }
+
+    /* Sold badge */
+    .product-card .sold-count {
+      font-size: 0.68rem;
+      color: #aaa;
+      margin-top: 7px;
+      text-align: center;
+    }
+
+    /* Section headings */
+    .section-heading {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: var(--dark);
+      text-align: center;
+      margin-bottom: 8px;
+    }
+    .section-subheading {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      margin-bottom: 2rem;
+    }
+    .heading-line {
+      width: 48px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--orange), var(--orange-light));
+      border-radius: 2px;
+      margin: 0 auto 1.5rem;
+    }
+
+    /* Navbar */
+    .text-orange { color: var(--orange) !important; }
+    .btn-orange {
+      background: linear-gradient(135deg, var(--orange) 0%, var(--orange-light) 100%);
+      color: #fff !important;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: opacity 0.2s;
+    }
+    .btn-orange:hover { opacity: 0.88; }
+    .btn-outline-orange {
+      border: 1.5px solid var(--orange);
+      color: var(--orange);
+      background: transparent;
+      border-radius: 8px;
+      font-weight: 600;
+    }
+    .btn-outline-orange:hover { background: var(--orange); color: #fff; }
+
+    /* Category pills */
+    .nav-pills .nav-link {
+      border-radius: 20px;
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: #555;
+      border: 1.5px solid #e8e8e8;
+      padding: 6px 16px;
+      transition: all 0.2s;
+    }
+    .nav-pills .nav-link.active,
+    .nav-pills .nav-link:hover {
+      background: var(--orange);
+      color: #fff !important;
+      border-color: var(--orange);
+    }
+
+    /* Best sellers label */
+    .bestseller-label {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: linear-gradient(135deg, #f8a400, #ffc107);
+      color: #fff;
+      font-size: 0.65rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* Footer */
+    footer a { transition: color 0.2s; }
+    footer a:hover { color: var(--orange) !important; }
+  </style>
 </head>
 <body>
   <!-- Navbar -->
@@ -55,24 +330,12 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="#hero">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#featured-deals">Featured Deals</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#best-sellers">Best Sellers</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#why-choose-us">Why Choose Us</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#blog">Blog</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#about">About</a>
-          </li>
+          <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#featured-deals">Featured Deals</a></li>
+          <li class="nav-item"><a class="nav-link" href="#best-sellers">Best Sellers</a></li>
+          <li class="nav-item"><a class="nav-link" href="#why-choose-us">Why Choose Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
         </ul>
         <form class="d-flex ms-3" id="search-form">
           <input class="form-control me-2" type="search" placeholder="Search products..." aria-label="Search" id="search-input">
@@ -98,239 +361,600 @@
   </header>
 
   <!-- Categories Navigation -->
-  <div id="categories" class="container py-3">
-    <ul class="nav nav-pills justify-content-center">
+  <div id="categories" class="container py-4">
+    <ul class="nav nav-pills justify-content-center gap-2">
       <li class="nav-item">
-        <a class="nav-link category-item" data-category="all" href="javascript:void(0);" style="cursor: pointer;"><i class="fas fa-th me-1"></i>All</a>
+        <a class="nav-link category-item" data-category="all" href="javascript:void(0);"><i class="fas fa-th me-1"></i>All</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link category-item" data-category="gadgets" href="javascript:void(0);" style="cursor: pointer;"><i class="fas fa-cogs me-1"></i>Gadgets</a>
+        <a class="nav-link category-item" data-category="gadgets" href="javascript:void(0);"><i class="fas fa-cogs me-1"></i>Gadgets</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link category-item" data-category="accessories" href="javascript:void(0);" style="cursor: pointer;"><i class="fas fa-headphones me-1"></i>Accessories</a>
+        <a class="nav-link category-item" data-category="accessories" href="javascript:void(0);"><i class="fas fa-headphones me-1"></i>Accessories</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link category-item" data-category="home" href="javascript:void(0);" style="cursor: pointer;"><i class="fas fa-home me-1"></i>Home</a>
+        <a class="nav-link category-item" data-category="home" href="javascript:void(0);"><i class="fas fa-home me-1"></i>Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link category-item" data-category="fitness" href="javascript:void(0);" style="cursor: pointer;"><i class="fas fa-dumbbell me-1"></i>Fitness</a>
+        <a class="nav-link category-item" data-category="fitness" href="javascript:void(0);"><i class="fas fa-dumbbell me-1"></i>Fitness</a>
       </li>
     </ul>
   </div>
 
   <!-- Featured Deals Section -->
   <section id="featured-deals" class="container py-5">
-    <h2 class="fw-bold text-center mb-4">Featured Deals</h2>
-    <div class="row">
-      <!-- Product Cards -->
-      <div class="col-md-3 col-sm-6 mb-4">
-        <div class="card h-100 shadow-sm rounded hover-scale" data-category="gadgets">
-          <img src="assets/images/keyboard.jpg" alt="Mechanical Keyboard" class="card-img-top" loading="lazy">
-          <div class="card-body d-flex flex-column">
-            <h6 class="card-title">Mechanical Keyboard</h6>
-            <p class="card-text">High-quality mechanical keyboard with RGB lights for gaming and productivity.</p>
-            <a href="#" class="btn btn-orange mt-auto"><i class="fas fa-shopping-cart me-1"></i>Buy Now</a>
+    <h2 class="section-heading">Featured Deals</h2>
+    <p class="section-subheading">Handpicked products with the best value on Shopee</p>
+    <div class="heading-line"></div>
+
+    <div class="row g-3">
+
+      <!-- Mechanical Keyboard -->
+      <div class="col-lg-3 col-md-4 col-sm-6 product-col" data-category="gadgets">
+        <div class="product-card">
+          <div class="img-wrap">
+            <img src="assets/images/keyboard.jpg" alt="Mechanical Keyboard" loading="lazy">
+            <span class="cat-badge">Gadgets</span>
+            <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+          </div>
+          <div class="card-body">
+            <h6 class="card-title">Inplay SK610 Wireless Mechanical Keyboard RGB Gaming</h6>
+            <div class="stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+              <span>(4.5) · 1.2k sold</span>
+            </div>
+            <div class="price-row">
+              <span class="price">₱1,299</span>
+              <span class="price-old">₱1,899</span>
+              <span class="discount-tag">-32%</span>
+            </div>
+            <p class="card-text">RGB mechanical keyboard with Brown switches, Bluetooth tri-mode connection for gaming and productivity.</p>
+            <a href="https://shopee.ph/Inplay-SK610-Wireless-Mechanical-Keyboard-Bluetooth-Tri-Mode-With-Brown-Switch-RGB-Gaming-Keyboard-i.462016051.24005670926" target="_blank" rel="noopener noreferrer" class="btn-buy">
+              <i class="fas fa-shopping-cart"></i> Buy Now
+            </a>
+            <p class="sold-count">🔥 1,243 people bought this</p>
           </div>
         </div>
       </div>
-      <div class="col-md-3 col-sm-6 mb-4">
-        <div class="card h-100 shadow-sm rounded hover-scale" data-category="accessories">
-          <img src="assets/images/mouse.jpg" alt="Wireless Mouse" class="card-img-top" loading="lazy">
-          <div class="card-body d-flex flex-column">
-            <h6 class="card-title">Wireless Mouse</h6>
-            <p class="card-text">Ergonomic wireless mouse for smooth gaming and work, with long battery life.</p>
-            <a href="#" class="btn btn-orange mt-auto"><i class="fas fa-shopping-cart me-1"></i>Buy Now</a>
+
+      <!-- Wireless Mouse -->
+      <div class="col-lg-3 col-md-4 col-sm-6 product-col" data-category="accessories">
+        <div class="product-card">
+          <div class="img-wrap">
+            <img src="assets/images/mouse.jpg" alt="Wireless Mouse" loading="lazy">
+            <span class="cat-badge">Accessories</span>
+            <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+          </div>
+          <div class="card-body">
+            <h6 class="card-title">Ergonomic Wireless Mouse Silent Click 2.4GHz</h6>
+            <div class="stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <span>(4.8) · 3.4k sold</span>
+            </div>
+            <div class="price-row">
+              <span class="price">₱349</span>
+              <span class="price-old">₱599</span>
+              <span class="discount-tag">-42%</span>
+            </div>
+            <p class="card-text">Ergonomic wireless mouse for smooth gaming and work, with long battery life up to 12 months.</p>
+            <a href="https://shopee.ph/wireless-mouse" target="_blank" rel="noopener noreferrer" class="btn-buy">
+              <i class="fas fa-shopping-cart"></i> Buy Now
+            </a>
+            <p class="sold-count">🔥 3,412 people bought this</p>
           </div>
         </div>
       </div>
-      <div class="col-md-3 col-sm-6 mb-4">
-        <div class="card h-100 shadow-sm rounded hover-scale" data-category="fitness">
-          <img src="assets/images/smartwatch.jpg" alt="Smartwatch" class="card-img-top" loading="lazy">
-          <div class="card-body d-flex flex-column">
-            <h6 class="card-title">Smartwatch</h6>
-            <p class="card-text">Track your fitness, notifications, and more with this stylish smartwatch.</p>
-            <a href="#" class="btn btn-orange mt-auto"><i class="fas fa-shopping-cart me-1"></i>Buy Now</a>
+
+      <!-- Smartwatch -->
+      <div class="col-lg-3 col-md-4 col-sm-6 product-col" data-category="fitness">
+        <div class="product-card">
+          <div class="img-wrap">
+            <img src="assets/images/smartwatch.jpg" alt="Smartwatch" loading="lazy">
+            <span class="cat-badge">Fitness</span>
+            <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+          </div>
+          <div class="card-body">
+            <h6 class="card-title">Smart Fitness Watch Heart Rate Monitor IP68</h6>
+            <div class="stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+              <span>(4.6) · 2.1k sold</span>
+            </div>
+            <div class="price-row">
+              <span class="price">₱899</span>
+              <span class="price-old">₱1,299</span>
+              <span class="discount-tag">-31%</span>
+            </div>
+            <p class="card-text">Track fitness, heart rate, sleep and notifications with this stylish waterproof smartwatch.</p>
+            <a href="https://shopee.ph/smartwatch" target="_blank" rel="noopener noreferrer" class="btn-buy">
+              <i class="fas fa-shopping-cart"></i> Buy Now
+            </a>
+            <p class="sold-count">🔥 2,108 people bought this</p>
           </div>
         </div>
       </div>
-      <div class="col-md-3 col-sm-6 mb-4">
-        <div class="card h-100 shadow-sm rounded hover-scale" data-category="home">
-          <img src="assets/images/phonestand.jpg" alt="Phone Stand" class="card-img-top" loading="lazy">
-          <div class="card-body d-flex flex-column">
-            <h6 class="card-title">Phone Stand</h6>
-            <p class="card-text">Adjustable stand for your phone or tablet, perfect for video calls or reading.</p>
-            <a href="#" class="btn btn-orange mt-auto"><i class="fas fa-shopping-cart me-1"></i>Buy Now</a>
+
+      <!-- Phone Stand -->
+      <div class="col-lg-3 col-md-4 col-sm-6 product-col" data-category="home">
+        <div class="product-card">
+          <div class="img-wrap">
+            <img src="assets/images/phonestand.jpg" alt="Phone Stand" loading="lazy">
+            <span class="cat-badge">Home</span>
+            <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+          </div>
+          <div class="card-body">
+            <h6 class="card-title">Adjustable Aluminum Phone & Tablet Stand Holder</h6>
+            <div class="stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <span>(4.9) · 5.6k sold</span>
+            </div>
+            <div class="price-row">
+              <span class="price">₱199</span>
+              <span class="price-old">₱350</span>
+              <span class="discount-tag">-43%</span>
+            </div>
+            <p class="card-text">Adjustable aluminum stand for phone or tablet, perfect for video calls, reading or watching.</p>
+            <a href="https://shopee.ph/phone-stand" target="_blank" rel="noopener noreferrer" class="btn-buy">
+              <i class="fas fa-shopping-cart"></i> Buy Now
+            </a>
+            <p class="sold-count">🔥 5,621 people bought this</p>
           </div>
         </div>
       </div>
-      <div class="col-md-3 col-sm-6 mb-4">
-        <div class="card h-100 shadow-sm rounded hover-scale" data-category="gadgets">
-          <img src="assets/images/tablet.jpg" alt="Tablet" class="card-img-top" loading="lazy">
-          <div class="card-body d-flex flex-column">
-            <h6 class="card-title">Tablet</h6>
-            <p class="card-text">Versatile tablet for work, entertainment, and creativity on the go.</p>
-            <a href="#" class="btn btn-orange mt-auto"><i class="fas fa-shopping-cart me-1"></i>Buy Now</a>
+
+      <!-- Tablet -->
+      <div class="col-lg-3 col-md-4 col-sm-6 product-col" data-category="gadgets">
+        <div class="product-card">
+          <div class="img-wrap">
+            <img src="assets/images/tablet.jpg" alt="Tablet" loading="lazy">
+            <span class="cat-badge">Gadgets</span>
+            <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+          </div>
+          <div class="card-body">
+            <h6 class="card-title">Android Tablet 10" HD Display WiFi Octa-Core</h6>
+            <div class="stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+              <span>(4.2) · 890 sold</span>
+            </div>
+            <div class="price-row">
+              <span class="price">₱3,499</span>
+              <span class="price-old">₱4,999</span>
+              <span class="discount-tag">-30%</span>
+            </div>
+            <p class="card-text">Versatile 10" HD tablet for work, entertainment, and creativity on the go with long battery.</p>
+            <a href="https://shopee.ph/tablet" target="_blank" rel="noopener noreferrer" class="btn-buy">
+              <i class="fas fa-shopping-cart"></i> Buy Now
+            </a>
+            <p class="sold-count">🔥 891 people bought this</p>
           </div>
         </div>
       </div>
-      <div class="col-md-3 col-sm-6 mb-4">
-        <div class="card h-100 shadow-sm rounded hover-scale" data-category="accessories">
-          <img src="assets/images/earbuds.jpg" alt="Wireless Earbuds" class="card-img-top" loading="lazy">
-          <div class="card-body d-flex flex-column">
-            <h6 class="card-title">Wireless Earbuds</h6>
-            <p class="card-text">High-quality wireless earbuds with noise cancellation and long battery.</p>
-            <a href="#" class="btn btn-orange mt-auto"><i class="fas fa-shopping-cart me-1"></i>Buy Now</a>
+
+      <!-- Wireless Earbuds -->
+      <div class="col-lg-3 col-md-4 col-sm-6 product-col" data-category="accessories">
+        <div class="product-card">
+          <div class="img-wrap">
+            <img src="assets/images/earbuds.jpg" alt="Wireless Earbuds" loading="lazy">
+            <span class="cat-badge">Accessories</span>
+            <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+          </div>
+          <div class="card-body">
+            <h6 class="card-title">TWS Wireless Earbuds ANC Noise Cancelling 30H Battery</h6>
+            <div class="stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+              <span>(4.7) · 4.2k sold</span>
+            </div>
+            <div class="price-row">
+              <span class="price">₱599</span>
+              <span class="price-old">₱999</span>
+              <span class="discount-tag">-40%</span>
+            </div>
+            <p class="card-text">High-quality TWS earbuds with active noise cancellation and 30-hour total battery life.</p>
+            <a href="https://shopee.ph/wireless-earbuds" target="_blank" rel="noopener noreferrer" class="btn-buy">
+              <i class="fas fa-shopping-cart"></i> Buy Now
+            </a>
+            <p class="sold-count">🔥 4,231 people bought this</p>
           </div>
         </div>
       </div>
-      <div class="col-md-3 col-sm-6 mb-4">
-        <div class="card h-100 shadow-sm rounded hover-scale" data-category="gadgets">
-          <img src="assets/images/webcam.jpg" alt="Webcam" class="card-img-top" loading="lazy">
-          <div class="card-body d-flex flex-column">
-            <h6 class="card-title">Webcam</h6>
-            <p class="card-text">HD webcam for clear video calls and streaming.</p>
-            <a href="#" class="btn btn-orange mt-auto"><i class="fas fa-shopping-cart me-1"></i>Buy Now</a>
+
+      <!-- Webcam -->
+      <div class="col-lg-3 col-md-4 col-sm-6 product-col" data-category="gadgets">
+        <div class="product-card">
+          <div class="img-wrap">
+            <img src="assets/images/webcam.jpg" alt="Webcam" loading="lazy">
+            <span class="cat-badge">Gadgets</span>
+            <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+          </div>
+          <div class="card-body">
+            <h6 class="card-title">1080P HD Webcam Autofocus Built-in Mic for Streaming</h6>
+            <div class="stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+              <span>(4.3) · 1.8k sold</span>
+            </div>
+            <div class="price-row">
+              <span class="price">₱799</span>
+              <span class="price-old">₱1,199</span>
+              <span class="discount-tag">-33%</span>
+            </div>
+            <p class="card-text">Full HD 1080p webcam with autofocus and built-in mic — perfect for video calls and streaming.</p>
+            <a href="https://shopee.ph/webcam" target="_blank" rel="noopener noreferrer" class="btn-buy">
+              <i class="fas fa-shopping-cart"></i> Buy Now
+            </a>
+            <p class="sold-count">🔥 1,802 people bought this</p>
           </div>
         </div>
       </div>
-      <div class="col-md-3 col-sm-6 mb-4">
-        <div class="card h-100 shadow-sm rounded hover-scale" data-category="home">
-          <img src="assets/images/lamp.jpg" alt="Desk Lamp" class="card-img-top" loading="lazy">
-          <div class="card-body d-flex flex-column">
-            <h6 class="card-title">Desk Lamp</h6>
-            <p class="card-text">Adjustable LED desk lamp with multiple brightness levels.</p>
-            <a href="#" class="btn btn-orange mt-auto"><i class="fas fa-shopping-cart me-1"></i>Buy Now</a>
+
+      <!-- Desk Lamp -->
+      <div class="col-lg-3 col-md-4 col-sm-6 product-col" data-category="home">
+        <div class="product-card">
+          <div class="img-wrap">
+            <img src="assets/images/lamp.jpg" alt="Desk Lamp" loading="lazy">
+            <span class="cat-badge">Home</span>
+            <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+          </div>
+          <div class="card-body">
+            <h6 class="card-title">LED Desk Lamp Touch Dimming 3 Color Modes USB Charging</h6>
+            <div class="stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <span>(4.8) · 2.9k sold</span>
+            </div>
+            <div class="price-row">
+              <span class="price">₱449</span>
+              <span class="price-old">₱699</span>
+              <span class="discount-tag">-36%</span>
+            </div>
+            <p class="card-text">Touch-dimming LED lamp with 3 color modes and built-in USB port to charge your devices.</p>
+            <a href="https://shopee.ph/desk-lamp" target="_blank" rel="noopener noreferrer" class="btn-buy">
+              <i class="fas fa-shopping-cart"></i> Buy Now
+            </a>
+            <p class="sold-count">🔥 2,934 people bought this</p>
           </div>
         </div>
       </div>
-      <div class="col-md-3 col-sm-6 mb-4">
-        <div class="card h-100 shadow-sm rounded hover-scale" data-category="accessories">
-          <img src="assets/images/bluetooth-speaker.jpg" alt="Bluetooth Speaker" class="card-img-top" loading="lazy">
-          <div class="card-body d-flex flex-column">
-            <h6 class="card-title">Bluetooth Speaker</h6>
-            <p class="card-text">Portable speaker with powerful sound and waterproof design.</p>
-            <a href="#" class="btn btn-orange mt-auto"><i class="fas fa-shopping-cart me-1"></i>Buy Now</a>
+
+      <!-- Bluetooth Speaker -->
+      <div class="col-lg-3 col-md-4 col-sm-6 product-col" data-category="accessories">
+        <div class="product-card">
+          <div class="img-wrap">
+            <img src="assets/images/bluetooth-speaker.jpg" alt="Bluetooth Speaker" loading="lazy">
+            <span class="cat-badge">Accessories</span>
+            <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+          </div>
+          <div class="card-body">
+            <h6 class="card-title">Portable Bluetooth Speaker IPX7 Waterproof Deep Bass</h6>
+            <div class="stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+              <span>(4.6) · 6.7k sold</span>
+            </div>
+            <div class="price-row">
+              <span class="price">₱799</span>
+              <span class="price-old">₱1,299</span>
+              <span class="discount-tag">-38%</span>
+            </div>
+            <p class="card-text">IPX7 waterproof portable speaker with deep bass and 20-hour playtime — for outdoors or home.</p>
+            <a href="https://shopee.ph/bluetooth-speaker" target="_blank" rel="noopener noreferrer" class="btn-buy">
+              <i class="fas fa-shopping-cart"></i> Buy Now
+            </a>
+            <p class="sold-count">🔥 6,721 people bought this</p>
           </div>
         </div>
       </div>
-      <div class="col-md-3 col-sm-6 mb-4">
-        <div class="card h-100 shadow-sm rounded hover-scale" data-category="accessories">
-          <img src="assets/images/headphone.jpg" alt="Headphones" class="card-img-top" loading="lazy">
-          <div class="card-body d-flex flex-column">
-            <h6 class="card-title">Headphones</h6>
-            <p class="card-text">Noise-cancelling over-ear headphones for immersive audio.</p>
-            <a href="#" class="btn btn-orange mt-auto"><i class="fas fa-shopping-cart me-1"></i>Buy Now</a>
+
+      <!-- Headphones -->
+      <div class="col-lg-3 col-md-4 col-sm-6 product-col" data-category="accessories">
+        <div class="product-card">
+          <div class="img-wrap">
+            <img src="assets/images/headphone.jpg" alt="Headphones" loading="lazy">
+            <span class="cat-badge">Accessories</span>
+            <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+          </div>
+          <div class="card-body">
+            <h6 class="card-title">Over-Ear Headphones Active Noise Cancelling Foldable</h6>
+            <div class="stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+              <span>(4.7) · 3.1k sold</span>
+            </div>
+            <div class="price-row">
+              <span class="price">₱1,099</span>
+              <span class="price-old">₱1,799</span>
+              <span class="discount-tag">-39%</span>
+            </div>
+            <p class="card-text">Noise-cancelling foldable over-ear headphones with 40-hour battery for immersive audio anywhere.</p>
+            <a href="https://shopee.ph/headphones" target="_blank" rel="noopener noreferrer" class="btn-buy">
+              <i class="fas fa-shopping-cart"></i> Buy Now
+            </a>
+            <p class="sold-count">🔥 3,102 people bought this</p>
           </div>
         </div>
       </div>
-      <div class="col-md-3 col-sm-6 mb-4">
-        <div class="card h-100 shadow-sm rounded hover-scale" data-category="gadgets">
-          <img src="assets/images/monitor.jpg" alt="Monitor" class="card-img-top" loading="lazy">
-          <div class="card-body d-flex flex-column">
-            <h6 class="card-title">Monitor</h6>
-            <p class="card-text">High-resolution monitor for better productivity and gaming.</p>
-            <a href="#" class="btn btn-orange mt-auto"><i class="fas fa-shopping-cart me-1"></i>Buy Now</a>
+
+      <!-- Monitor -->
+      <div class="col-lg-3 col-md-4 col-sm-6 product-col" data-category="gadgets">
+        <div class="product-card">
+          <div class="img-wrap">
+            <img src="assets/images/monitor.jpg" alt="Monitor" loading="lazy">
+            <span class="cat-badge">Gadgets</span>
+            <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+          </div>
+          <div class="card-body">
+            <h6 class="card-title">24" FHD IPS Monitor 75Hz 1ms HDMI Eye Care</h6>
+            <div class="stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+              <span>(4.4) · 750 sold</span>
+            </div>
+            <div class="price-row">
+              <span class="price">₱5,999</span>
+              <span class="price-old">₱7,999</span>
+              <span class="discount-tag">-25%</span>
+            </div>
+            <p class="card-text">24-inch Full HD IPS monitor with 75Hz refresh, 1ms response time and built-in eye care tech.</p>
+            <a href="https://shopee.ph/monitor" target="_blank" rel="noopener noreferrer" class="btn-buy">
+              <i class="fas fa-shopping-cart"></i> Buy Now
+            </a>
+            <p class="sold-count">🔥 751 people bought this</p>
           </div>
         </div>
       </div>
-      <div class="col-md-3 col-sm-6 mb-4">
-        <div class="card h-100 shadow-sm rounded hover-scale" data-category="home">
-          <img src="assets/images/chair.jpg" alt="Office Chair" class="card-img-top" loading="lazy">
-          <div class="card-body d-flex flex-column">
-            <h6 class="card-title">Office Chair</h6>
-            <p class="card-text">Ergonomic office chair with lumbar support for long hours.</p>
-            <a href="#" class="btn btn-orange mt-auto"><i class="fas fa-shopping-cart me-1"></i>Buy Now</a>
+
+      <!-- Office Chair -->
+      <div class="col-lg-3 col-md-4 col-sm-6 product-col" data-category="home">
+        <div class="product-card">
+          <div class="img-wrap">
+            <img src="assets/images/chair.jpg" alt="Office Chair" loading="lazy">
+            <span class="cat-badge">Home</span>
+            <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+          </div>
+          <div class="card-body">
+            <h6 class="card-title">Ergonomic Mesh Office Chair Lumbar Support Adjustable</h6>
+            <div class="stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+              <span>(4.5) · 1.4k sold</span>
+            </div>
+            <div class="price-row">
+              <span class="price">₱3,299</span>
+              <span class="price-old">₱4,500</span>
+              <span class="discount-tag">-27%</span>
+            </div>
+            <p class="card-text">Ergonomic mesh chair with adjustable lumbar support for comfortable long work-from-home hours.</p>
+            <a href="https://shopee.ph/office-chair" target="_blank" rel="noopener noreferrer" class="btn-buy">
+              <i class="fas fa-shopping-cart"></i> Buy Now
+            </a>
+            <p class="sold-count">🔥 1,401 people bought this</p>
           </div>
         </div>
       </div>
-      <div class="col-md-3 col-sm-6 mb-4">
-        <div class="card h-100 shadow-sm rounded hover-scale" data-category="fitness">
-          <img src="assets/images/dumbbells.jpg" alt="Dumbbells" class="card-img-top" loading="lazy">
-          <div class="card-body d-flex flex-column">
-            <h6 class="card-title">Dumbbells</h6>
-            <p class="card-text">Adjustable dumbbells for home workouts and strength training.</p>
-            <a href="#" class="btn btn-orange mt-auto"><i class="fas fa-shopping-cart me-1"></i>Buy Now</a>
+
+      <!-- Dumbbells -->
+      <div class="col-lg-3 col-md-4 col-sm-6 product-col" data-category="fitness">
+        <div class="product-card">
+          <div class="img-wrap">
+            <img src="assets/images/dumbbells.jpg" alt="Dumbbells" loading="lazy">
+            <span class="cat-badge">Fitness</span>
+            <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+          </div>
+          <div class="card-body">
+            <h6 class="card-title">Adjustable Dumbbell Set 5–25kg Anti-slip Home Gym</h6>
+            <div class="stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <span>(4.9) · 2.3k sold</span>
+            </div>
+            <div class="price-row">
+              <span class="price">₱1,499</span>
+              <span class="price-old">₱2,199</span>
+              <span class="discount-tag">-32%</span>
+            </div>
+            <p class="card-text">Adjustable anti-slip dumbbells for home workouts. Easily switch weights from 5kg to 25kg.</p>
+            <a href="https://shopee.ph/dumbbells" target="_blank" rel="noopener noreferrer" class="btn-buy">
+              <i class="fas fa-shopping-cart"></i> Buy Now
+            </a>
+            <p class="sold-count">🔥 2,312 people bought this</p>
           </div>
         </div>
       </div>
-      <div class="col-md-3 col-sm-6 mb-4">
-        <div class="card h-100 shadow-sm rounded hover-scale" data-category="accessories">
-          <img src="assets/images/powerbank.jpg" alt="Power Bank" class="card-img-top" loading="lazy">
-          <div class="card-body d-flex flex-column">
-            <h6 class="card-title">Power Bank</h6>
-            <p class="card-text">High-capacity power bank to keep your devices charged on the go.</p>
-            <a href="#" class="btn btn-orange mt-auto"><i class="fas fa-shopping-cart me-1"></i>Buy Now</a>
+
+      <!-- Power Bank -->
+      <div class="col-lg-3 col-md-4 col-sm-6 product-col" data-category="accessories">
+        <div class="product-card">
+          <div class="img-wrap">
+            <img src="assets/images/powerbank.jpg" alt="Power Bank" loading="lazy">
+            <span class="cat-badge">Accessories</span>
+            <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+          </div>
+          <div class="card-body">
+            <h6 class="card-title">20000mAh Power Bank Fast Charge PD 22.5W Slim</h6>
+            <div class="stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+              <span>(4.6) · 8.9k sold</span>
+            </div>
+            <div class="price-row">
+              <span class="price">₱699</span>
+              <span class="price-old">₱1,099</span>
+              <span class="discount-tag">-36%</span>
+            </div>
+            <p class="card-text">Slim 20,000mAh power bank with 22.5W fast charging and dual USB-C output ports.</p>
+            <a href="https://shopee.ph/power-bank" target="_blank" rel="noopener noreferrer" class="btn-buy">
+              <i class="fas fa-shopping-cart"></i> Buy Now
+            </a>
+            <p class="sold-count">🔥 8,921 people bought this</p>
           </div>
         </div>
       </div>
+
     </div>
   </section>
 
   <!-- Best Sellers Section -->
-  <section id="best-sellers" class="container py-5">
-    <h2 class="fw-bold text-center mb-4">Best Sellers</h2>
-    <div class="row">
-      <div class="col-md-3 col-sm-6 mb-4">
-        <div class="card h-100 shadow-sm rounded hover-scale" data-category="accessories">
-          <img src="assets/images/bluetooth-speaker.jpg" alt="Bluetooth Speaker" class="card-img-top" loading="lazy">
-          <div class="card-body d-flex flex-column">
-            <h6 class="card-title">Bluetooth Speaker</h6>
-            <p class="card-text">Portable speaker with powerful sound and waterproof design.</p>
-            <a href="#" class="btn btn-orange mt-auto"><i class="fas fa-shopping-cart me-1"></i>Buy Now</a>
+  <section id="best-sellers" class="py-5" style="background: #fafafa;">
+    <div class="container">
+      <h2 class="section-heading">Best Sellers</h2>
+      <p class="section-subheading">Our most loved products by thousands of buyers</p>
+      <div class="heading-line"></div>
+
+      <div class="row g-3">
+
+        <!-- Bluetooth Speaker -->
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="product-card">
+            <div class="img-wrap">
+              <img src="assets/images/bluetooth-speaker.jpg" alt="Bluetooth Speaker" loading="lazy">
+              <span class="bestseller-label"><i class="fas fa-crown me-1"></i>Best Seller</span>
+              <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+            </div>
+            <div class="card-body">
+              <h6 class="card-title">Portable Bluetooth Speaker IPX7 Waterproof Deep Bass</h6>
+              <div class="stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                <span>(4.6) · 6.7k sold</span>
+              </div>
+              <div class="price-row">
+                <span class="price">₱799</span>
+                <span class="price-old">₱1,299</span>
+                <span class="discount-tag">-38%</span>
+              </div>
+              <p class="card-text">IPX7 waterproof speaker with deep bass and 20-hour playtime — perfect for outdoors.</p>
+              <a href="https://shopee.ph/bluetooth-speaker" target="_blank" rel="noopener noreferrer" class="btn-buy">
+                <i class="fas fa-shopping-cart"></i> Buy Now
+              </a>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-md-3 col-sm-6 mb-4">
-        <div class="card h-100 shadow-sm rounded hover-scale" data-category="accessories">
-          <img src="assets/images/headphone.jpg" alt="Headphones" class="card-img-top" loading="lazy">
-          <div class="card-body d-flex flex-column">
-            <h6 class="card-title">Headphones</h6>
-            <p class="card-text">Noise-cancelling over-ear headphones for immersive audio.</p>
-            <a href="#" class="btn btn-orange mt-auto"><i class="fas fa-shopping-cart me-1"></i>Buy Now</a>
+
+        <!-- Headphones -->
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="product-card">
+            <div class="img-wrap">
+              <img src="assets/images/headphone.jpg" alt="Headphones" loading="lazy">
+              <span class="bestseller-label"><i class="fas fa-crown me-1"></i>Best Seller</span>
+              <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+            </div>
+            <div class="card-body">
+              <h6 class="card-title">Over-Ear Headphones Active Noise Cancelling Foldable</h6>
+              <div class="stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                <span>(4.7) · 3.1k sold</span>
+              </div>
+              <div class="price-row">
+                <span class="price">₱1,099</span>
+                <span class="price-old">₱1,799</span>
+                <span class="discount-tag">-39%</span>
+              </div>
+              <p class="card-text">Foldable noise-cancelling over-ear headphones with 40-hour battery for immersive audio.</p>
+              <a href="https://shopee.ph/headphones" target="_blank" rel="noopener noreferrer" class="btn-buy">
+                <i class="fas fa-shopping-cart"></i> Buy Now
+              </a>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-3 col-sm-6 mb-4">
-        <div class="card h-100 shadow-sm rounded hover-scale" data-category="gadgets">
-          <img src="assets/images/monitor.jpg" alt="Monitor" class="card-img-top" loading="lazy">
-          <div class="card-body d-flex flex-column">
-            <h6 class="card-title">Monitor</h6>
-            <p class="card-text">High-resolution monitor for better productivity and gaming.</p>
-            <a href="#" class="btn btn-orange mt-auto"><i class="fas fa-shopping-cart me-1"></i>Buy Now</a>
+
+        <!-- Monitor -->
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="product-card">
+            <div class="img-wrap">
+              <img src="assets/images/monitor.jpg" alt="Monitor" loading="lazy">
+              <span class="bestseller-label"><i class="fas fa-crown me-1"></i>Best Seller</span>
+              <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+            </div>
+            <div class="card-body">
+              <h6 class="card-title">24" FHD IPS Monitor 75Hz 1ms HDMI Eye Care</h6>
+              <div class="stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                <span>(4.4) · 750 sold</span>
+              </div>
+              <div class="price-row">
+                <span class="price">₱5,999</span>
+                <span class="price-old">₱7,999</span>
+                <span class="discount-tag">-25%</span>
+              </div>
+              <p class="card-text">24-inch Full HD IPS monitor with 75Hz refresh rate and built-in blue light filter.</p>
+              <a href="https://shopee.ph/monitor" target="_blank" rel="noopener noreferrer" class="btn-buy">
+                <i class="fas fa-shopping-cart"></i> Buy Now
+              </a>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-md-3 col-sm-6 mb-4">
-        <div class="card h-100 shadow-sm rounded hover-scale" data-category="home">
-          <img src="assets/images/chair.jpg" alt="Office Chair" class="card-img-top" loading="lazy">
-          <div class="card-body d-flex flex-column">
-            <h6 class="card-title">Office Chair</h6>
-            <p class="card-text">Ergonomic office chair with lumbar support for long hours.</p>
-            <a href="#" class="btn btn-orange mt-auto"><i class="fas fa-shopping-cart me-1"></i>Buy Now</a>
+
+        <!-- Office Chair -->
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="product-card">
+            <div class="img-wrap">
+              <img src="assets/images/chair.jpg" alt="Office Chair" loading="lazy">
+              <span class="bestseller-label"><i class="fas fa-crown me-1"></i>Best Seller</span>
+              <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+            </div>
+            <div class="card-body">
+              <h6 class="card-title">Ergonomic Mesh Office Chair Lumbar Support Adjustable</h6>
+              <div class="stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                <span>(4.5) · 1.4k sold</span>
+              </div>
+              <div class="price-row">
+                <span class="price">₱3,299</span>
+                <span class="price-old">₱4,500</span>
+                <span class="discount-tag">-27%</span>
+              </div>
+              <p class="card-text">Ergonomic mesh chair with adjustable lumbar support — ideal for WFH setups.</p>
+              <a href="https://shopee.ph/office-chair" target="_blank" rel="noopener noreferrer" class="btn-buy">
+                <i class="fas fa-shopping-cart"></i> Buy Now
+              </a>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-md-3 col-sm-6 mb-4">
-        <div class="card h-100 shadow-sm rounded hover-scale" data-category="fitness">
-          <img src="assets/images/dumbbells.jpg" alt="Dumbbells" class="card-img-top" loading="lazy">
-          <div class="card-body d-flex flex-column">
-            <h6 class="card-title">Dumbbells</h6>
-            <p class="card-text">Adjustable dumbbells for home workouts and strength training.</p>
-            <a href="#" class="btn btn-orange mt-auto"><i class="fas fa-shopping-cart me-1"></i>Buy Now</a>
+
+        <!-- Dumbbells -->
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="product-card">
+            <div class="img-wrap">
+              <img src="assets/images/dumbbells.jpg" alt="Dumbbells" loading="lazy">
+              <span class="bestseller-label"><i class="fas fa-crown me-1"></i>Best Seller</span>
+              <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+            </div>
+            <div class="card-body">
+              <h6 class="card-title">Adjustable Dumbbell Set 5–25kg Anti-slip Home Gym</h6>
+              <div class="stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <span>(4.9) · 2.3k sold</span>
+              </div>
+              <div class="price-row">
+                <span class="price">₱1,499</span>
+                <span class="price-old">₱2,199</span>
+                <span class="discount-tag">-32%</span>
+              </div>
+              <p class="card-text">Adjustable anti-slip dumbbells for home workouts, 5kg to 25kg range.</p>
+              <a href="https://shopee.ph/dumbbells" target="_blank" rel="noopener noreferrer" class="btn-buy">
+                <i class="fas fa-shopping-cart"></i> Buy Now
+              </a>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-md-3 col-sm-6 mb-4">
-        <div class="card h-100 shadow-sm rounded hover-scale" data-category="accessories">
-          <img src="assets/images/powerbank.jpg" alt="Power Bank" class="card-img-top" loading="lazy">
-          <div class="card-body d-flex flex-column">
-            <h6 class="card-title">Power Bank</h6>
-            <p class="card-text">High-capacity power bank to keep your devices charged on the go.</p>
-            <a href="#" class="btn btn-orange mt-auto"><i class="fas fa-shopping-cart me-1"></i>Buy Now</a>
+
+        <!-- Power Bank -->
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="product-card">
+            <div class="img-wrap">
+              <img src="assets/images/powerbank.jpg" alt="Power Bank" loading="lazy">
+              <span class="bestseller-label"><i class="fas fa-crown me-1"></i>Best Seller</span>
+              <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+            </div>
+            <div class="card-body">
+              <h6 class="card-title">20000mAh Power Bank Fast Charge PD 22.5W Slim</h6>
+              <div class="stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                <span>(4.6) · 8.9k sold</span>
+              </div>
+              <div class="price-row">
+                <span class="price">₱699</span>
+                <span class="price-old">₱1,099</span>
+                <span class="discount-tag">-36%</span>
+              </div>
+              <p class="card-text">Slim 20,000mAh power bank with 22.5W fast charging for all devices on the go.</p>
+              <a href="https://shopee.ph/power-bank" target="_blank" rel="noopener noreferrer" class="btn-buy">
+                <i class="fas fa-shopping-cart"></i> Buy Now
+              </a>
+            </div>
           </div>
         </div>
+
       </div>
     </div>
   </section>
@@ -368,7 +992,7 @@
             <div class="card-body">
               <h5 class="card-title">Top 5 Productivity Gadgets for Remote Work</h5>
               <p class="card-text">In today's remote work environment, having the right gadgets can boost your productivity. Here are our top picks from Shopee.</p>
-              <p class="card-text">From ergonomic keyboards to wireless mice, discover tools that make working from home easier. Check out our recommendations including the Mechanical Keyboard and Wireless Mouse.</p>
+              <p class="card-text">From ergonomic keyboards to wireless mice, discover tools that make working from home easier.</p>
               <a href="blog1.html" class="btn btn-orange"><i class="fas fa-arrow-right me-1"></i>Read More</a>
             </div>
           </div>
@@ -378,8 +1002,8 @@
             <img src="assets/images/blog2.jpg" alt="Smartwatch Review" class="card-img-top" loading="lazy">
             <div class="card-body">
               <h5 class="card-title">Smartwatch Review: Stay Fit and Connected</h5>
-              <p class="card-text">Smartwatches are more than just time-tellers; they're fitness trackers and notification hubs. Our review covers the best features and why you should get one.</p>
-              <p class="card-text">Learn about heart rate monitoring, GPS tracking, and app integrations. We recommend the Smartwatch available on Shopee for its affordability and features.</p>
+              <p class="card-text">Smartwatches are more than just time-tellers; they're fitness trackers and notification hubs. Our review covers the best features.</p>
+              <p class="card-text">Learn about heart rate monitoring, GPS tracking, and app integrations.</p>
               <a href="blog2.html" class="btn btn-orange"><i class="fas fa-arrow-right me-1"></i>Read More</a>
             </div>
           </div>
@@ -390,7 +1014,7 @@
             <div class="card-body">
               <h5 class="card-title">Top Wireless Accessories for Productivity</h5>
               <p class="card-text">Enhance your workflow with the best wireless mice, earbuds, and keyboards. Discover cord-free solutions for better productivity.</p>
-              <p class="card-text">From ergonomic designs to long battery life, find accessories that keep you connected and efficient.</p>
+              <p class="card-text">From ergonomic designs to long battery life, find accessories that keep you connected.</p>
               <a href="blog4.html" class="btn btn-orange"><i class="fas fa-arrow-right me-1"></i>Read More</a>
             </div>
           </div>
@@ -455,12 +1079,11 @@
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       const categoryItems = document.querySelectorAll('.category-item');
-      const productCards = document.querySelectorAll('#featured-deals .col-md-3, #featured-deals .col-sm-6');
+      const productCols = document.querySelectorAll('#featured-deals .product-col');
       const searchForm = document.getElementById('search-form');
       const searchInput = document.getElementById('search-input');
       const featuredDealsSection = document.getElementById('featured-deals');
 
-      // Helper: scroll to featured deals section
       function scrollToFeaturedDeals() {
         const navbarHeight = document.querySelector('.navbar').offsetHeight;
         const sectionTop = featuredDealsSection.getBoundingClientRect().top + window.pageYOffset - navbarHeight - 10;
@@ -472,22 +1095,18 @@
         const category = activeCategory ? activeCategory.getAttribute('data-category') : 'all';
         const query = searchInput.value.toLowerCase().trim();
 
-        productCards.forEach(card => {
-          const cardEl = card.querySelector('[data-category]');
-          const cardCategory = cardEl ? cardEl.getAttribute('data-category') : '';
-          const title = card.querySelector('.card-title').textContent.toLowerCase();
-          const description = card.querySelector('.card-text').textContent.toLowerCase();
+        productCols.forEach(col => {
+          const colCategory = col.getAttribute('data-category');
+          const title = col.querySelector('.card-title').textContent.toLowerCase();
+          const desc = col.querySelector('.card-text').textContent.toLowerCase();
 
-          const matchesCategory = category === 'all' || cardCategory === category;
-          const matchesSearch = query === '' || title.includes(query) || description.includes(query);
+          const matchesCategory = category === 'all' || colCategory === category;
+          const matchesSearch = query === '' || title.includes(query) || desc.includes(query);
 
-          card.style.display = (matchesCategory && matchesSearch) ? 'block' : 'none';
+          col.style.display = (matchesCategory && matchesSearch) ? '' : 'none';
         });
 
-        // Scroll to Featured Deals section if triggered by search
-        if (scrollToDeals) {
-          scrollToFeaturedDeals();
-        }
+        if (scrollToDeals) scrollToFeaturedDeals();
       }
 
       categoryItems.forEach(item => {
@@ -498,30 +1117,32 @@
         });
       });
 
-      // On form submit: filter + scroll
       searchForm.addEventListener('submit', function(e) {
         e.preventDefault();
         filterProducts(true);
       });
 
-      // Live search on input: filter + scroll (only if query is non-empty)
       searchInput.addEventListener('input', function() {
-        const hasQuery = searchInput.value.trim().length > 0;
-        filterProducts(hasQuery);
+        filterProducts(searchInput.value.trim().length > 0);
       });
 
-      // Set 'All' as default active
       document.querySelector('.category-item[data-category="all"]').classList.add('active');
+
+      // Wishlist toggle
+      document.querySelectorAll('.wishlist-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+          const icon = this.querySelector('i');
+          icon.classList.toggle('far');
+          icon.classList.toggle('fas');
+          this.style.color = icon.classList.contains('fas') ? 'var(--orange)' : '';
+        });
+      });
     });
 
     // Back to Top Button
     const backToTopBtn = document.getElementById('back-to-top');
     window.addEventListener('scroll', function() {
-      if (window.pageYOffset > 300) {
-        backToTopBtn.style.display = 'block';
-      } else {
-        backToTopBtn.style.display = 'none';
-      }
+      backToTopBtn.style.display = window.pageYOffset > 300 ? 'block' : 'none';
     });
     backToTopBtn.addEventListener('click', function() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -537,20 +1158,13 @@
 
       function highlightNav() {
         if (Date.now() - lastClickTime < 1000) return;
-
         let current = '';
         sections.forEach(section => {
-          const sectionTop = section.offsetTop;
-          if (window.pageYOffset >= sectionTop) {
-            current = section.getAttribute('id');
-          }
+          if (window.pageYOffset >= section.offsetTop) current = section.getAttribute('id');
         });
-
         navLinks.forEach(link => {
           link.classList.remove('active');
-          if (link.getAttribute('href') === '#' + current) {
-            link.classList.add('active');
-          }
+          if (link.getAttribute('href') === '#' + current) link.classList.add('active');
         });
       }
 

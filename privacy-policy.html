@@ -5,14 +5,83 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Privacy Policy | Shopee Deals</title>
   <meta name="description" content="Read our privacy policy to understand how Shopee Deals collects, uses, and protects your personal information.">
+  <link rel="icon" type="image/png" href="assets/images/faviconnew.png">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
+  <style>
+    :root { --orange: #ee4d2d; --orange-light: #ff6b4a; --orange-pale: #fff4f2; }
+    body { font-family: 'Poppins', sans-serif; }
+    .text-orange { color: var(--orange) !important; }
+    .btn-orange {
+      background: linear-gradient(135deg, var(--orange) 0%, var(--orange-light) 100%);
+      color: #fff !important; border: none; border-radius: 8px; font-weight: 600;
+    }
+
+    .page-hero {
+      background: linear-gradient(135deg, var(--orange) 0%, var(--orange-light) 100%);
+      color: white; padding: 60px 0 50px; text-align: center; position: relative; overflow: hidden;
+    }
+    .page-hero::before {
+      content: ''; position: absolute; top: -40px; right: -40px;
+      width: 200px; height: 200px; background: rgba(255,255,255,0.08); border-radius: 50%;
+    }
+    .page-hero::after {
+      content: ''; position: absolute; bottom: -60px; left: -30px;
+      width: 250px; height: 250px; background: rgba(255,255,255,0.06); border-radius: 50%;
+    }
+    .page-hero h1 { font-weight: 700; font-size: 2.2rem; margin-bottom: 10px; }
+    .page-hero p { opacity: 0.9; font-size: 1rem; margin: 0; }
+
+    /* Policy Content */
+    .policy-wrap {
+      max-width: 820px; margin: 0 auto;
+    }
+    .policy-section {
+      background: #fff;
+      border-radius: 14px;
+      padding: 28px 32px;
+      margin-bottom: 16px;
+      border: 1.5px solid #f0f0f0;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    }
+    .policy-section h3 {
+      font-size: 1rem; font-weight: 700; color: var(--orange);
+      display: flex; align-items: center; gap: 10px; margin-bottom: 12px;
+    }
+    .policy-section h3 .sec-num {
+      background: var(--orange-pale);
+      color: var(--orange);
+      width: 28px; height: 28px;
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.78rem; font-weight: 700; flex-shrink: 0;
+    }
+    .policy-section p, .policy-section li {
+      font-size: 0.88rem; color: #555; line-height: 1.7; margin-bottom: 6px;
+    }
+    .policy-section ul { padding-left: 0; list-style: none; }
+    .policy-section ul li::before {
+      content: '✓'; color: var(--orange); font-weight: 700; margin-right: 8px;
+    }
+
+    .effective-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--orange-pale); color: var(--orange);
+      border: 1.5px solid #ffd0c7; border-radius: 20px;
+      padding: 6px 16px; font-size: 0.8rem; font-weight: 600;
+      margin-bottom: 28px;
+    }
+
+    footer a { transition: color 0.2s; }
+    footer a:hover { color: var(--orange) !important; }
+  </style>
 </head>
 <body>
+
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
     <div class="container">
       <a class="navbar-brand text-orange fw-bold" href="index.html"><i class="fas fa-shopping-bag me-2"></i>Shopee Deals</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,21 +89,12 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="index.html#hero">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="index.html#featured-deals">Featured Deals</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="index.html#best-sellers">Best Sellers</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="index.html#blog">Blog</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="index.html#about">About</a>
-          </li>
+          <li class="nav-item"><a class="nav-link" href="index.html#hero">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#featured-deals">Featured Deals</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#best-sellers">Best Sellers</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#why-choose-us">Why Choose Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#blog">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
         </ul>
       </div>
     </div>
@@ -45,67 +105,103 @@
     <strong>Affiliate Disclosure:</strong> We may earn commissions from purchases made through our Shopee affiliate links. This helps support our site and allows us to bring you more content.
   </div>
 
-  <div class="container py-5">
-    <h1 class="fw-bold text-center mb-4">Privacy Policy</h1>
-    <p><strong>Effective Date:</strong> February 25, 2026</p>
-    <p>At Shopee Deals ("we," "us," or "our"), we are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website (shopeedeals.com) or interact with our services. By using our site, you agree to the terms of this policy.</p>
-
-    <h3>1. Information We Collect</h3>
-    <p>We may collect the following types of information:</p>
-    <ul>
-      <li><strong>Personal Information:</strong> Name, email address, and any other details you provide when contacting us via our contact form or email.</li>
-      <li><strong>Usage Data:</strong> Information about how you access and use our website, including IP address, browser type, pages visited, and time spent on the site. This is collected through cookies and analytics tools.</li>
-      <li><strong>Cookies and Tracking Technologies:</strong> We use cookies to enhance your experience, remember preferences, and analyze traffic. You can manage cookies through your browser settings.</li>
-    </ul>
-
-    <h3>2. How We Use Your Information</h3>
-    <p>We use the collected information for the following purposes:</p>
-    <ul>
-      <li>To respond to your inquiries and provide customer support.</li>
-      <li>To improve our website, content, and services.</li>
-      <li>To analyze site traffic and user behavior using tools like Google Analytics.</li>
-      <li>To comply with legal obligations and protect our rights.</li>
-    </ul>
-    <p>We do not sell, rent, or trade your personal information to third parties for marketing purposes.</p>
-
-    <h3>3. Sharing Your Information</h3>
-    <p>We may share your information in the following circumstances:</p>
-    <ul>
-      <li>With service providers who assist us in operating our website (e.g., hosting, analytics), under strict confidentiality agreements.</li>
-      <li>When required by law or to protect our rights, property, or safety.</li>
-      <li>In connection with a business transfer, such as a merger or sale of assets.</li>
-    </ul>
-
-    <h3>4. Data Security</h3>
-    <p>We implement appropriate technical and organizational measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over the internet is 100% secure.</p>
-
-    <h3>5. Your Rights</h3>
-    <p>Depending on your location, you may have the following rights regarding your personal data:</p>
-    <ul>
-      <li>Access: Request a copy of the personal information we hold about you.</li>
-      <li>Correction: Request updates to inaccurate or incomplete information.</li>
-      <li>Deletion: Request deletion of your personal information, subject to legal requirements.</li>
-      <li>Opt-out: Withdraw consent or opt out of marketing communications.</li>
-    </ul>
-    <p>To exercise these rights, contact us at contact@shopeedeals.com.</p>
-
-    <h3>6. Third-Party Links</h3>
-    <p>Our website may contain links to third-party sites, including Shopee. We are not responsible for the privacy practices of these sites. We encourage you to review their policies.</p>
-
-    <h3>7. Children's Privacy</h3>
-    <p>Our site is not intended for children under 13. We do not knowingly collect personal information from children. If we become aware of such collection, we will delete it promptly.</p>
-
-    <h3>8. Changes to This Policy</h3>
-    <p>We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated effective date. Your continued use of the site constitutes acceptance of the revised policy.</p>
-
-    <h3>9. Contact Us</h3>
-    <p>If you have any questions about this Privacy Policy, please contact us:</p>
-    <p>Email: contact@shopeedeals.com<br>
-    Owner: Aika Romerro<br>
-    Website: shopeedeals.com</p>
+  <!-- Page Hero -->
+  <div class="page-hero">
+    <div class="container" style="position:relative; z-index:1;">
+      <h1><i class="fas fa-shield-alt me-2"></i>Privacy Policy</h1>
+      <p>We're committed to protecting your privacy and personal information.</p>
+    </div>
   </div>
 
-  <footer class="bg-white text-center py-3 border-top">
+  <!-- Content -->
+  <div class="container py-5">
+    <div class="policy-wrap">
+
+      <div class="text-center mb-4">
+        <span class="effective-badge"><i class="fas fa-calendar-alt"></i> Effective Date: February 25, 2026</span>
+      </div>
+
+      <p class="text-muted mb-4" style="font-size:0.88rem; text-align:center;">
+        At Shopee Deals, we are committed to protecting your privacy and ensuring the security of your personal information. By using our site, you agree to the terms of this policy.
+      </p>
+
+      <div class="policy-section">
+        <h3><span class="sec-num">1</span> Information We Collect</h3>
+        <p>We may collect the following types of information:</p>
+        <ul>
+          <li><strong>Personal Information:</strong> Name, email address, and details you provide when contacting us.</li>
+          <li><strong>Usage Data:</strong> IP address, browser type, pages visited, and time spent on the site — collected through cookies and analytics tools.</li>
+          <li><strong>Cookies and Tracking Technologies:</strong> Used to enhance your experience, remember preferences, and analyze traffic. You can manage cookies through your browser settings.</li>
+        </ul>
+      </div>
+
+      <div class="policy-section">
+        <h3><span class="sec-num">2</span> How We Use Your Information</h3>
+        <ul>
+          <li>To respond to your inquiries and provide customer support.</li>
+          <li>To improve our website, content, and services.</li>
+          <li>To analyze site traffic and user behavior using Google Analytics.</li>
+          <li>To comply with legal obligations and protect our rights.</li>
+        </ul>
+        <p class="mt-2 mb-0"><strong>We do not sell, rent, or trade your personal information to third parties for marketing purposes.</strong></p>
+      </div>
+
+      <div class="policy-section">
+        <h3><span class="sec-num">3</span> Sharing Your Information</h3>
+        <ul>
+          <li>With service providers who assist us in operating our website (e.g., hosting, analytics), under strict confidentiality agreements.</li>
+          <li>When required by law or to protect our rights, property, or safety.</li>
+          <li>In connection with a business transfer, such as a merger or sale of assets.</li>
+        </ul>
+      </div>
+
+      <div class="policy-section">
+        <h3><span class="sec-num">4</span> Data Security</h3>
+        <p>We implement appropriate technical and organizational measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over the internet is 100% secure.</p>
+      </div>
+
+      <div class="policy-section">
+        <h3><span class="sec-num">5</span> Your Rights</h3>
+        <p>Depending on your location, you may have the following rights regarding your personal data:</p>
+        <ul>
+          <li><strong>Access:</strong> Request a copy of the personal information we hold about you.</li>
+          <li><strong>Correction:</strong> Request updates to inaccurate or incomplete information.</li>
+          <li><strong>Deletion:</strong> Request deletion of your personal information, subject to legal requirements.</li>
+          <li><strong>Opt-out:</strong> Withdraw consent or opt out of marketing communications.</li>
+        </ul>
+        <p class="mb-0">To exercise these rights, contact us at <strong>contact@shopeedeals.com</strong>.</p>
+      </div>
+
+      <div class="policy-section">
+        <h3><span class="sec-num">6</span> Third-Party Links</h3>
+        <p class="mb-0">Our website may contain links to third-party sites, including Shopee. We are not responsible for the privacy practices of these sites. We encourage you to review their policies.</p>
+      </div>
+
+      <div class="policy-section">
+        <h3><span class="sec-num">7</span> Children's Privacy</h3>
+        <p class="mb-0">Our site is not intended for children under 13. We do not knowingly collect personal information from children. If we become aware of such collection, we will delete it promptly.</p>
+      </div>
+
+      <div class="policy-section">
+        <h3><span class="sec-num">8</span> Changes to This Policy</h3>
+        <p class="mb-0">We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated effective date. Your continued use of the site constitutes acceptance of the revised policy.</p>
+      </div>
+
+      <div class="policy-section">
+        <h3><span class="sec-num">9</span> Contact Us</h3>
+        <p>If you have any questions about this Privacy Policy, please contact us:</p>
+        <ul>
+          <li>Email: contact@shopeedeals.com</li>
+          <li>Owner: Aika Romerro</li>
+          <li>Website: shopeedeals.com</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-white text-center py-4 border-top">
     <p class="mb-2 text-muted">&copy; 2026 Shopee Deals. Powered by Affiliate Links. | Owner: Aika Romerro</p>
     <p class="mb-0">
       <a href="privacy-policy.html" class="text-muted me-3">Privacy Policy</a>
@@ -113,5 +209,7 @@
       <a href="contact.html" class="text-muted">Contact</a>
     </p>
   </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
