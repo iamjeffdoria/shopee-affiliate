@@ -3,27 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shopee Deals | Best Affiliate Products & Reviews</title>
-  <link rel="icon" type="image/png" href="assets/images/faviconnew.png"> 
+  <title>Deals Scout PH | Best Affiliate Products & Reviews</title>
+  <link rel="icon" type="image/png" href="assets/images/fav.png"> 
 
   <!-- Basic SEO -->
-  <meta name="description" content="Discover top Shopee deals on gadgets, accessories, and more. Read reviews, guides, and find the best products for your needs.">
-  <meta name="keywords" content="Shopee deals, affiliate products, gadgets, accessories, reviews, guides, buy online, discount, deals">
+  <meta name="description" content="Discover top deals on gadgets, accessories, and more. Read reviews, guides, and find the best products for your needs.">
+  <meta name="keywords" content="Deals Scout PH, affiliate deals, affiliate products, gadgets, accessories, reviews, guides, buy online, discount, deals">
   <meta name="author" content="Jefferson Doria">
   <meta name="robots" content="index, follow">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Shopee Deals | Best Affiliate Products & Reviews">
-  <meta property="og:description" content="Discover top Shopee deals on gadgets, accessories, and more. Read reviews, guides, and find the best products for your needs.">
+  <meta property="og:title" content="Deals Scout PH | Best Affiliate Products & Reviews">
+  <meta property="og:description" content="Discover top deals on gadgets, accessories, and more. Read reviews, guides, and find the best products for your needs.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="assets/images/shopee2.jpg">
+  <meta property="og:image" content="https://via.placeholder.com/600x400.png?text=Deals+Scout+PH">
   <meta property="og:url" content="#">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Shopee Deals | Best Affiliate Products & Reviews">
-  <meta name="twitter:description" content="Discover top Shopee deals on gadgets, accessories, and more. Read reviews, guides, and find the best products for your needs.">
-  <meta name="twitter:image" content="assets/images/shopee2.jpg">
+  <meta name="twitter:title" content="Deals Scout PH | Best Affiliate Products & Reviews">
+  <meta name="twitter:description" content="Discover top deals on gadgets, accessories, and more. Read reviews, guides, and find the best products for your needs.">
+  <meta name="twitter:image" content="https://via.placeholder.com/600x400.png?text=Deals+Scout+PH">
 
   <!-- Bootstrap & Fonts -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -36,7 +36,7 @@
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "Shopee Deals | Best Affiliate Products & Reviews",
+    "name": "Deals Scout PH | Best Affiliate Products & Reviews",
     "url": "#",
     "author": {
       "@type": "Person",
@@ -318,13 +318,214 @@
     /* Footer */
     footer a { transition: color 0.2s; }
     footer a:hover { color: var(--orange) !important; }
+
+    /* ══════════════════════════════════════
+       PAGE PRELOADER
+    ══════════════════════════════════════ */
+    #page-preloader {
+      position: fixed;
+      inset: 0;
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 99999;
+      transition: opacity 0.45s ease, visibility 0.45s ease;
+    }
+    #page-preloader.hidden {
+      opacity: 0;
+      visibility: hidden;
+    }
+    .preloader-logo {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--orange);
+      margin-bottom: 20px;
+      letter-spacing: 0.02em;
+    }
+    .preloader-logo i { margin-right: 8px; }
+    /* Shopee-style three-dot bounce */
+    .preloader-dots {
+      display: flex;
+      gap: 8px;
+    }
+    .preloader-dots span {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--orange);
+      animation: dotBounce 1.2s ease-in-out infinite;
+    }
+    .preloader-dots span:nth-child(2) { animation-delay: 0.2s; }
+    .preloader-dots span:nth-child(3) { animation-delay: 0.4s; }
+    @keyframes dotBounce {
+      0%, 80%, 100% { transform: translateY(0); opacity: 0.4; }
+      40%            { transform: translateY(-10px); opacity: 1; }
+    }
+
+    /* ══════════════════════════════════════
+       SKELETON SHIMMER (images + blog cards)
+    ══════════════════════════════════════ */
+    @keyframes shimmer {
+      0%   { background-position: -600px 0; }
+      100% { background-position:  600px 0; }
+    }
+    .skeleton-shimmer {
+      background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+      background-size: 600px 100%;
+      animation: shimmer 1.4s infinite linear;
+    }
+    /* Applied to img-wrap before image loads */
+    .product-card .img-wrap.loading {
+      position: relative;
+    }
+    .product-card .img-wrap.loading::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, #f0f0f0 25%, #e8e8e8 50%, #f0f0f0 75%);
+      background-size: 600px 100%;
+      animation: shimmer 1.4s infinite linear;
+      border-radius: 0;
+      z-index: 2;
+    }
+    /* Blog card image skeleton */
+    .blog-img-wrap {
+      position: relative;
+      overflow: hidden;
+      background: #f0f0f0;
+      height: 200px;
+    }
+    .blog-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: opacity 0.3s ease;
+    }
+    .blog-img-wrap img.loading {
+      opacity: 0;
+    }
+    .blog-img-wrap .skeleton-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, #f0f0f0 25%, #e8e8e8 50%, #f0f0f0 75%);
+      background-size: 600px 100%;
+      animation: shimmer 1.4s infinite linear;
+      transition: opacity 0.3s ease;
+    }
+    .blog-img-wrap .skeleton-overlay.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    /* ══════════════════════════════════════
+       FILTER SPINNER OVERLAY
+    ══════════════════════════════════════ */
+    #filter-spinner {
+      display: none;
+      position: absolute;
+      inset: 0;
+      background: rgba(255,255,255,0.7);
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+      border-radius: 8px;
+      backdrop-filter: blur(2px);
+    }
+    #filter-spinner.active {
+      display: flex;
+    }
+    .spinner-ring {
+      width: 40px;
+      height: 40px;
+      border: 3px solid #ffddd8;
+      border-top-color: var(--orange);
+      border-radius: 50%;
+      animation: spin 0.7s linear infinite;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    /* Make products-grid the positioning parent */
+    #products-grid {
+      position: relative;
+    }
+
+    /* ── NO RECORDS FOUND ── */
+    #no-records-found {
+      display: none;
+      width: 100%;
+      padding: 60px 20px;
+      text-align: center;
+      animation: fadeIn 0.3s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    #no-records-found .no-records-icon {
+      width: 90px;
+      height: 90px;
+      background: var(--orange-pale);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+    }
+    #no-records-found .no-records-icon i {
+      font-size: 2.2rem;
+      color: var(--orange);
+      opacity: 0.7;
+    }
+    #no-records-found h5 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #333;
+      margin-bottom: 8px;
+    }
+    #no-records-found p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+      max-width: 320px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    #no-records-found .btn-clear {
+      background: linear-gradient(135deg, var(--orange) 0%, var(--orange-light) 100%);
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      padding: 9px 24px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity 0.2s, transform 0.15s;
+    }
+    #no-records-found .btn-clear:hover {
+      opacity: 0.88;
+      transform: scale(1.03);
+    }
   </style>
 </head>
 <body>
+
+  <!-- ── PAGE PRELOADER ── -->
+  <div id="page-preloader">
+    <div class="preloader-logo"><i class="fas fa-shopping-bag"></i>Deals Scout PH</div>
+    <div class="preloader-dots">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
     <div class="container">
-      <a class="navbar-brand text-orange fw-bold" href="#"><i class="fas fa-shopping-bag me-2"></i>Shopee Deals</a>
+      <a class="navbar-brand text-orange fw-bold" href="#"><i class="fas fa-shopping-bag me-2"></i>Deals Scout PH</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -351,10 +552,10 @@
   </div>
 
   <!-- Hero Section -->
-  <header id="hero" class="text-center py-5" style="background-image: url('assets/images/shopee2.jpg'); background-size: cover; background-position: center; position: relative; min-height: 400px; display: flex; align-items: center;">
+  <header id="hero" class="text-center py-5" style="background-image: url('assets/images/herobg.jpg'); background-size: cover; background-position: center; position: relative; min-height: 400px; display: flex; align-items: center;">
     <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5);"></div>
     <div class="container" style="position: relative; z-index: 1; color: white;">
-      <h1 class="fw-bold">Top Shopee Products</h1>
+      <h1 class="fw-bold">Top Deals in the Philippines</h1>
       <p class="lead">Discover amazing deals and read our expert reviews on the best products.</p>
       <a href="#featured-deals" class="btn btn-orange btn-lg"><i class="fas fa-shopping-bag me-2"></i>Shop Now</a>
     </div>
@@ -384,10 +585,13 @@
   <!-- Featured Deals Section -->
   <section id="featured-deals" class="container py-5">
     <h2 class="section-heading">Featured Deals</h2>
-    <p class="section-subheading">Handpicked products with the best value on Shopee</p>
+    <p class="section-subheading">Handpicked products with the best value — available on Shopee</p>
     <div class="heading-line"></div>
 
-    <div class="row g-3">
+    <div class="row g-3" id="products-grid">
+
+      <!-- Filter Spinner Overlay -->
+      <div id="filter-spinner"><div class="spinner-ring"></div></div>
 
       <!-- Mechanical Keyboard -->
       <div class="col-lg-3 col-md-4 col-sm-6 product-col" data-category="gadgets">
@@ -781,6 +985,18 @@
         </div>
       </div>
 
+      <!-- ── NO RECORDS FOUND ── -->
+      <div id="no-records-found">
+        <div class="no-records-icon">
+          <i class="fas fa-search"></i>
+        </div>
+        <h5>No Products Found</h5>
+        <p id="no-records-message">We couldn't find any products matching your search. Try a different keyword or browse all categories.</p>
+        <button class="btn-clear" id="btn-clear-filters">
+          <i class="fas fa-redo me-2"></i>Clear Filters
+        </button>
+      </div>
+
     </div>
   </section>
 
@@ -961,7 +1177,7 @@
 
   <!-- Why Choose Us Section -->
   <section id="why-choose-us" class="container py-5">
-    <h2 class="fw-bold text-center mb-4">Why Choose Shopee Deals?</h2>
+    <h2 class="fw-bold text-center mb-4">Why Choose Deals Scout PH?</h2>
     <div class="row text-center">
       <div class="col-md-4 mb-4">
         <i class="fas fa-star fa-3x text-orange mb-3"></i>
@@ -971,7 +1187,7 @@
       <div class="col-md-4 mb-4">
         <i class="fas fa-tags fa-3x text-orange mb-3"></i>
         <h5>Best Deals</h5>
-        <p>Curated selection of the top products with the best prices and promotions on Shopee.</p>
+        <p>Curated selection of the top products with the best prices and promotions available on Shopee.</p>
       </div>
       <div class="col-md-4 mb-4">
         <i class="fas fa-shield-alt fa-3x text-orange mb-3"></i>
@@ -988,7 +1204,10 @@
       <div class="row">
         <div class="col-lg-4 col-md-6 mb-4">
           <div class="card h-100 shadow-sm">
-            <img src="assets/images/top5.jpg" alt="Top Productivity Gadgets" class="card-img-top" loading="lazy">
+            <div class="blog-img-wrap">
+              <div class="skeleton-overlay"></div>
+              <img src="assets/images/top5.jpg" alt="Top Productivity Gadgets" class="loading" loading="lazy">
+            </div>
             <div class="card-body">
               <h5 class="card-title">Top 5 Productivity Gadgets for Remote Work</h5>
               <p class="card-text">In today's remote work environment, having the right gadgets can boost your productivity. Here are our top picks from Shopee.</p>
@@ -999,7 +1218,10 @@
         </div>
         <div class="col-lg-4 col-md-6 mb-4">
           <div class="card h-100 shadow-sm">
-            <img src="assets/images/blog2.jpg" alt="Smartwatch Review" class="card-img-top" loading="lazy">
+            <div class="blog-img-wrap">
+              <div class="skeleton-overlay"></div>
+              <img src="assets/images/blog2.jpg" alt="Smartwatch Review" class="loading" loading="lazy">
+            </div>
             <div class="card-body">
               <h5 class="card-title">Smartwatch Review: Stay Fit and Connected</h5>
               <p class="card-text">Smartwatches are more than just time-tellers; they're fitness trackers and notification hubs. Our review covers the best features.</p>
@@ -1010,7 +1232,10 @@
         </div>
         <div class="col-lg-4 col-md-6 mb-4">
           <div class="card h-100 shadow-sm">
-            <img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=400&h=250&fit=crop" alt="Wireless Accessories" class="card-img-top" loading="lazy">
+            <div class="blog-img-wrap">
+              <div class="skeleton-overlay"></div>
+              <img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=400&h=250&fit=crop" alt="Wireless Accessories" class="loading" loading="lazy">
+            </div>
             <div class="card-body">
               <h5 class="card-title">Top Wireless Accessories for Productivity</h5>
               <p class="card-text">Enhance your workflow with the best wireless mice, earbuds, and keyboards. Discover cord-free solutions for better productivity.</p>
@@ -1027,7 +1252,7 @@
   <section id="about" class="bg-light py-5">
     <div class="container text-center">
       <h2 class="fw-bold mb-3">About Us</h2>
-      <p class="text-muted mb-3">Welcome to Shopee Deals, your go-to source for the best affiliate products and reviews. We're passionate about helping you find quality items at great prices.</p>
+      <p class="text-muted mb-3">Welcome to Deals Scout PH, your go-to source for the best affiliate products and reviews. We're passionate about helping you find quality items at great prices.</p>
       <p class="text-muted mb-3">This site is owned and managed by <strong>Jefferson Doria</strong>. We provide honest reviews and recommendations for your convenience.</p>
       <p class="text-muted small"><em>Affiliate Disclosure: As a Shopee affiliate, we may earn commissions from qualifying purchases made through our links. This helps support our site and allows us to bring you more content.</em></p>
     </div>
@@ -1038,8 +1263,8 @@
     <div class="container">
       <div class="row">
         <div class="col-md-4 mb-4">
-          <h5>Shopee Deals</h5>
-          <p>Your go-to source for the best Shopee affiliate products and reviews.</p>
+          <h5>Deals Scout PH</h5>
+          <p>Your go-to source for the best affiliate deals and reviews in the Philippines.</p>
           <div class="social-links">
             <a href="#" class="text-orange me-3"><i class="fab fa-facebook-f"></i></a>
             <a href="#" class="text-orange me-3"><i class="fab fa-twitter"></i></a>
@@ -1066,7 +1291,7 @@
         </div>
       </div>
       <hr>
-      <p class="mb-2 text-muted">&copy; 2026 Shopee Deals. Powered by Affiliate Links. | Owner: Jefferson Doria</p>
+      <p class="mb-2 text-muted">&copy; 2026 Deals Scout PH. Powered by Affiliate Links. | Owner: Jefferson Doria</p>
       <p class="mb-0">
         <a href="privacy-policy.html" class="text-muted me-3">Privacy Policy</a>
         <a href="terms-of-service.html" class="text-muted me-3">Terms of Service</a>
@@ -1075,62 +1300,157 @@
     </div>
   </footer>
 
-  <!-- Custom JS for Categories and Search -->
+  <!-- Custom JS for Categories, Search & Loading Animations -->
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const categoryItems = document.querySelectorAll('.category-item');
-      const productCols = document.querySelectorAll('#featured-deals .product-col');
-      const searchForm = document.getElementById('search-form');
-      const searchInput = document.getElementById('search-input');
-      const featuredDealsSection = document.getElementById('featured-deals');
+    /* ══════════════════════════════════════
+       1. PAGE PRELOADER
+    ══════════════════════════════════════ */
+    window.addEventListener('load', function () {
+      const preloader = document.getElementById('page-preloader');
+      // Small delay so the animation is visible even on fast connections
+      setTimeout(() => preloader.classList.add('hidden'), 500);
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+
+      /* ══════════════════════════════════════
+         2. PRODUCT IMAGE SKELETON (img-wrap)
+      ══════════════════════════════════════ */
+      document.querySelectorAll('.product-card .img-wrap').forEach(wrap => {
+        const img = wrap.querySelector('img');
+        if (!img) return;
+
+        // Start in loading state
+        wrap.classList.add('loading');
+
+        const reveal = () => wrap.classList.remove('loading');
+
+        if (img.complete && img.naturalWidth > 0) {
+          reveal(); // already cached
+        } else {
+          img.addEventListener('load',  reveal);
+          img.addEventListener('error', reveal); // remove shimmer even on broken images
+        }
+      });
+
+      /* ══════════════════════════════════════
+         3. BLOG IMAGE SKELETON
+      ══════════════════════════════════════ */
+      document.querySelectorAll('.blog-img-wrap').forEach(wrap => {
+        const img      = wrap.querySelector('img');
+        const overlay  = wrap.querySelector('.skeleton-overlay');
+        if (!img || !overlay) return;
+
+        const reveal = () => {
+          img.classList.remove('loading');
+          overlay.classList.add('hidden');
+        };
+
+        if (img.complete && img.naturalWidth > 0) {
+          reveal();
+        } else {
+          img.addEventListener('load',  reveal);
+          img.addEventListener('error', reveal);
+        }
+      });
+
+      /* ══════════════════════════════════════
+         4. FILTER / SEARCH LOGIC
+      ══════════════════════════════════════ */
+      const categoryItems   = document.querySelectorAll('.category-item');
+      const productCols     = document.querySelectorAll('#featured-deals .product-col');
+      const searchForm      = document.getElementById('search-form');
+      const searchInput     = document.getElementById('search-input');
+      const featuredDeals   = document.getElementById('featured-deals');
+      const noRecordsEl     = document.getElementById('no-records-found');
+      const noRecordsMsg    = document.getElementById('no-records-message');
+      const btnClearFilters = document.getElementById('btn-clear-filters');
+      const filterSpinner   = document.getElementById('filter-spinner');
 
       function scrollToFeaturedDeals() {
-        const navbarHeight = document.querySelector('.navbar').offsetHeight;
-        const sectionTop = featuredDealsSection.getBoundingClientRect().top + window.pageYOffset - navbarHeight - 10;
-        window.scrollTo({ top: sectionTop, behavior: 'smooth' });
+        const navH = document.querySelector('.navbar').offsetHeight;
+        const top  = featuredDeals.getBoundingClientRect().top + window.pageYOffset - navH - 10;
+        window.scrollTo({ top, behavior: 'smooth' });
       }
 
-      function filterProducts(scrollToDeals) {
+      function applyFilter() {
         const activeCategory = document.querySelector('.category-item.active');
-        const category = activeCategory ? activeCategory.getAttribute('data-category') : 'all';
-        const query = searchInput.value.toLowerCase().trim();
+        const category       = activeCategory ? activeCategory.getAttribute('data-category') : 'all';
+        const query          = searchInput.value.toLowerCase().trim();
+        let visibleCount     = 0;
 
         productCols.forEach(col => {
-          const colCategory = col.getAttribute('data-category');
-          const title = col.querySelector('.card-title').textContent.toLowerCase();
-          const desc = col.querySelector('.card-text').textContent.toLowerCase();
-
-          const matchesCategory = category === 'all' || colCategory === category;
-          const matchesSearch = query === '' || title.includes(query) || desc.includes(query);
-
-          col.style.display = (matchesCategory && matchesSearch) ? '' : 'none';
+          const colCat   = col.getAttribute('data-category');
+          const title    = col.querySelector('.card-title').textContent.toLowerCase();
+          const desc     = col.querySelector('.card-text').textContent.toLowerCase();
+          const show     = (category === 'all' || colCat === category) &&
+                           (query === '' || title.includes(query) || desc.includes(query));
+          col.style.display = show ? '' : 'none';
+          if (show) visibleCount++;
         });
 
-        if (scrollToDeals) scrollToFeaturedDeals();
+        // No-records message
+        if (visibleCount === 0) {
+          const activeCategory = document.querySelector('.category-item.active');
+          const catLabel = activeCategory ? activeCategory.textContent.trim() : 'this category';
+          let msg = 'We couldn\'t find any products';
+          if (query && catLabel.toLowerCase() !== 'all') {
+            msg += ` matching "<strong>${query}</strong>" in <strong>${catLabel}</strong>.`;
+          } else if (query) {
+            msg += ` matching "<strong>${query}</strong>".`;
+          } else {
+            msg += ` in <strong>${catLabel}</strong>.`;
+          }
+          msg += ' Try a different keyword or browse all categories.';
+          noRecordsMsg.innerHTML = msg;
+          noRecordsEl.style.display = 'flex';
+          noRecordsEl.style.flexDirection = 'column';
+          noRecordsEl.style.alignItems = 'center';
+        } else {
+          noRecordsEl.style.display = 'none';
+        }
+      }
+
+      /* ── Show spinner briefly, then filter ── */
+      function filterProducts(scrollToDeals) {
+        filterSpinner.classList.add('active');
+        setTimeout(() => {
+          applyFilter();
+          filterSpinner.classList.remove('active');
+          if (scrollToDeals) scrollToFeaturedDeals();
+        }, 350); // brief pause so spinner is visible
       }
 
       categoryItems.forEach(item => {
-        item.addEventListener('click', function() {
+        item.addEventListener('click', function () {
           categoryItems.forEach(i => i.classList.remove('active'));
           this.classList.add('active');
           filterProducts(false);
         });
       });
 
-      searchForm.addEventListener('submit', function(e) {
+      searchForm.addEventListener('submit', function (e) {
         e.preventDefault();
         filterProducts(true);
       });
 
-      searchInput.addEventListener('input', function() {
-        filterProducts(searchInput.value.trim().length > 0);
+      searchInput.addEventListener('input', function () {
+        filterProducts(this.value.trim().length > 0);
       });
 
+      btnClearFilters.addEventListener('click', function () {
+        searchInput.value = '';
+        categoryItems.forEach(i => i.classList.remove('active'));
+        document.querySelector('.category-item[data-category="all"]').classList.add('active');
+        filterProducts(false);
+      });
+
+      // Set default active
       document.querySelector('.category-item[data-category="all"]').classList.add('active');
 
-      // Wishlist toggle
+      /* ── Wishlist toggle ── */
       document.querySelectorAll('.wishlist-btn').forEach(btn => {
-        btn.addEventListener('click', function() {
+        btn.addEventListener('click', function () {
           const icon = this.querySelector('i');
           icon.classList.toggle('far');
           icon.classList.toggle('fas');
@@ -1139,28 +1459,28 @@
       });
     });
 
-    // Back to Top Button
+    /* ── Back to Top ── */
     const backToTopBtn = document.getElementById('back-to-top');
-    window.addEventListener('scroll', function() {
+    window.addEventListener('scroll', function () {
       backToTopBtn.style.display = window.pageYOffset > 300 ? 'block' : 'none';
     });
-    backToTopBtn.addEventListener('click', function() {
+    backToTopBtn.addEventListener('click', function () {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   </script>
 
   <!-- Navbar Highlighting Script -->
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
-      const sections = document.querySelectorAll('section[id], header[id]');
+    document.addEventListener('DOMContentLoaded', function () {
+      const navLinks    = document.querySelectorAll('.navbar-nav .nav-link');
+      const sections    = document.querySelectorAll('section[id], header[id]');
       let lastClickTime = 0;
 
       function highlightNav() {
         if (Date.now() - lastClickTime < 1000) return;
         let current = '';
-        sections.forEach(section => {
-          if (window.pageYOffset >= section.offsetTop) current = section.getAttribute('id');
+        sections.forEach(s => {
+          if (window.pageYOffset >= s.offsetTop) current = s.getAttribute('id');
         });
         navLinks.forEach(link => {
           link.classList.remove('active');
@@ -1169,7 +1489,7 @@
       }
 
       navLinks.forEach(link => {
-        link.addEventListener('click', function() {
+        link.addEventListener('click', function () {
           navLinks.forEach(l => l.classList.remove('active'));
           this.classList.add('active');
           lastClickTime = Date.now();

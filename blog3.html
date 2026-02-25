@@ -3,130 +3,184 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ultimate Home Office Setup Guide | Shopee Deals</title>
-
-  <!-- Basic SEO -->
+  <title>Ultimate Home Office Setup Guide | Deals Scout PH</title>
   <meta name="description" content="Create the perfect home office with our ultimate setup guide. Essential accessories and ergonomic tips for productive remote work.">
-  <meta name="keywords" content="home office setup, ergonomic accessories, remote work, Shopee deals">
+  <meta name="keywords" content="home office setup, ergonomic accessories, remote work, affiliate deals PH">
   <meta name="author" content="Jefferson Doria">
   <meta name="robots" content="index, follow">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Ultimate Home Office Setup Guide">
-  <meta property="og:description" content="Create the perfect home office with our ultimate setup guide.">
-  <meta property="og:type" content="article">
-  <meta property="og:image" content="https://via.placeholder.com/600x400.png?text=Home+Office+Setup">
-
-  <!-- Bootstrap & Fonts -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
+  <style>
+    :root{--orange:#ee4d2d;--orange-light:#ff6b4a;--orange-pale:#fff4f2;--dark:#1a1a2e;--text-muted:#6c757d;--card-radius:16px;--shadow-sm:0 2px 12px rgba(0,0,0,0.07)}
+    body{font-family:'Poppins',sans-serif;background:#f8f9fa}
+    .text-orange{color:var(--orange)!important}
+    footer a:hover{color:var(--orange)!important}
+    .blog-article{background:#fff;border-radius:var(--card-radius);box-shadow:var(--shadow-sm);border:1.5px solid #f0f0f0;padding:36px 40px;max-width:860px;margin:0 auto}
+    @media(max-width:576px){.blog-article{padding:24px 18px}}
+    .blog-hero-wrap{position:relative;border-radius:12px;overflow:hidden;background:#f0f0f0;aspect-ratio:16/7;margin-bottom:28px}
+    .blog-hero-wrap img{width:100%;height:100%;object-fit:cover;display:block;transition:opacity .4s ease}
+    .blog-hero-wrap img.loading{opacity:0}
+    @keyframes shimmer{0%{background-position:-800px 0}100%{background-position:800px 0}}
+    .skeleton-overlay{position:absolute;inset:0;background:linear-gradient(90deg,#f0f0f0 25%,#e8e8e8 50%,#f0f0f0 75%);background-size:800px 100%;animation:shimmer 1.4s infinite linear;transition:opacity .4s ease}
+    .skeleton-overlay.hidden{opacity:0;pointer-events:none}
+    .blog-article h1{font-size:1.7rem;font-weight:700;color:var(--dark);line-height:1.3}
+    .blog-article h2{font-size:1rem;font-weight:700;color:var(--dark);margin:0 0 8px}
+    .blog-article p{font-size:.92rem;color:#444;line-height:1.8}
+    .blog-article ul{padding-left:0;list-style:none}
+    .blog-article ul li{font-size:.88rem;color:#444;line-height:1.8;padding:5px 0 5px 22px;position:relative}
+    .blog-article ul li::before{content:'✓';color:var(--orange);font-weight:700;position:absolute;left:0}
+    .blog-meta{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:24px}
+    .blog-meta span{font-size:.75rem;color:var(--text-muted);display:flex;align-items:center;gap:4px}
+    .blog-meta span i{color:var(--orange)}
+    .item-card{background:#fff;border:1.5px solid #f0f0f0;border-radius:14px;padding:22px 24px;margin-bottom:20px;box-shadow:0 2px 10px rgba(0,0,0,.05);transition:box-shadow .2s,border-color .2s}
+    .item-card:hover{box-shadow:0 6px 24px rgba(238,77,45,.12);border-color:#ffd0c7}
+    .item-header{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+    .section-icon{width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,var(--orange),var(--orange-light));color:#fff;display:flex;align-items:center;justify-content:center;font-size:.9rem;flex-shrink:0}
+    .tip-box{background:#f0f9ff;border:1.5px solid #bae6fd;border-radius:10px;padding:12px 16px;font-size:.82rem;color:#0369a1;margin:12px 0}
+    .tip-box strong{color:#0c4a6e}
+    .checklist{background:#f8f9fa;border-radius:12px;padding:18px 20px;margin:14px 0}
+    .checklist li{padding:6px 0 6px 24px;font-size:.88rem}
+    .btn-shopee{display:inline-flex;align-items:center;gap:7px;background:linear-gradient(135deg,var(--orange),var(--orange-light));color:#fff;border:none;border-radius:10px;padding:9px 18px;font-size:.8rem;font-weight:600;text-decoration:none;transition:opacity .2s,transform .15s;margin-top:12px}
+    .btn-shopee:hover{opacity:.9;transform:scale(1.02);color:#fff}
+    .conclusion-box{background:var(--orange-pale);border:1.5px solid #ffd0c7;border-radius:14px;padding:22px 26px;margin-top:32px}
+    .conclusion-box h2{color:var(--orange);font-size:1.05rem;margin-bottom:10px}
+    .blog-page-hero{background:linear-gradient(135deg,var(--orange) 0%,var(--orange-light) 100%);color:white;padding:44px 0 36px;text-align:center;position:relative;overflow:hidden}
+    .blog-page-hero::before{content:'';position:absolute;top:-40px;right:-40px;width:180px;height:180px;background:rgba(255,255,255,.08);border-radius:50%}
+    .blog-page-hero::after{content:'';position:absolute;bottom:-50px;left:-30px;width:220px;height:220px;background:rgba(255,255,255,.06);border-radius:50%}
+    .blog-page-hero .tag-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:4px 14px;font-size:.75rem;font-weight:600;margin-bottom:12px}
+    .blog-page-hero h1{font-size:1.55rem;font-weight:700;margin-bottom:6px}
+    .blog-page-hero p{opacity:.88;font-size:.88rem;margin:0}
+    .btn-back{display:inline-flex;align-items:center;gap:6px;background:#f0f0f0;color:#555;border:none;border-radius:8px;padding:8px 16px;font-size:.82rem;font-weight:600;text-decoration:none;transition:background .2s,color .2s;margin-bottom:28px}
+    .btn-back:hover{background:var(--orange);color:#fff}
+    #why-choose-us{background:#fff;border-radius:var(--card-radius);padding:40px 30px;box-shadow:var(--shadow-sm)}
+    #back-to-top{position:fixed;bottom:22px;right:22px;width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--orange),var(--orange-light));color:#fff;border:none;font-size:1rem;display:none;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(238,77,45,.35);cursor:pointer;z-index:1000;transition:opacity .2s,transform .2s}
+    #back-to-top:hover{opacity:.88;transform:translateY(-2px)}
+    #back-to-top.visible{display:flex}
+  </style>
 </head>
 <body>
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
     <div class="container">
-      <a class="navbar-brand text-orange fw-bold" href="index.html">Shopee Deals</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+      <a class="navbar-brand text-orange fw-bold" href="index.html"><i class="fas fa-tag me-2"></i>Deals Scout PH</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="index.html#hero">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="index.html#featured-deals">Featured Deals</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="index.html#best-sellers">Best Sellers</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="index.html#why-choose-us">Why Choose Us</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="index.html#blog">Blog</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="index.html#about">About</a>
-          </li>
+          <li class="nav-item"><a class="nav-link" href="index.html#hero">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#featured-deals">Featured Deals</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#best-sellers">Best Sellers</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#why-choose-us">Why Choose Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#blog">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- Affiliate Disclosure Banner -->
   <div class="alert alert-info text-center py-2 mb-0" role="alert">
     <strong>Affiliate Disclosure:</strong> We may earn commissions from purchases made through our Shopee affiliate links. This helps support our site and allows us to bring you more content.
   </div>
 
-  <!-- Blog Post Content -->
-  <section class="container py-5">
-    <a href="index.html#blog" class="btn btn-secondary mb-3">&larr; Back to Blog</a>
-    <h1 class="fw-bold mb-4">Ultimate Home Office Setup Guide</h1>
-    <p class="text-muted mb-4">Published on February 24, 2026 | By Jefferson Doria</p>
-    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&h=400&fit=crop" alt="Home Office Setup" class="img-fluid mb-4" loading="lazy">
-    <p>Setting up an effective home office is crucial for productivity and well-being. Whether you're working remotely full-time or occasionally, the right accessories can make all the difference. Here's our comprehensive guide to creating the ultimate home office setup, with practical tips and product recommendations.</p>
+  <div class="blog-page-hero">
+    <div class="container" style="position:relative;z-index:1">
+      <div class="tag-badge"><i class="fas fa-home"></i> Home Office</div>
+      <h1>Ultimate Home Office Setup Guide</h1>
+      <p>Build a workspace that keeps you focused, comfortable, and productive</p>
+    </div>
+  </div>
 
-    <h2>Ergonomics: The Foundation of Comfort</h2>
-    <p>Proper ergonomics prevent strain and injury. Position your monitor at eye level (top of screen at eye height), keep your keyboard and mouse at elbow height with wrists straight, and ensure your feet are flat on the floor. Your chair should support the natural curve of your spine. Taking breaks every hour to stretch can prevent long-term issues.</p>
-    <p><strong>Key Tip:</strong> Use the 90-90-90 rule: 90-degree angles at elbows, hips, and knees.</p>
-
-    <h2>Essential Accessories for Productivity</h2>
-    <ul>
-      <li><strong>Laptop Stand:</strong> Elevates your device for better airflow, cooling, and posture. Adjustable height is key for different working positions.</li>
-      <li><strong>Phone Stand:</strong> Keeps your phone at eye level for video calls, reducing neck strain. Look for adjustable and stable designs.</li>
-      <li><strong>External Monitor:</strong> Increases screen real estate for multitasking. A 24-27 inch monitor with 1080p or higher resolution is ideal.</li>
-      <li><strong>Comfortable Chair:</strong> Invest in proper seating with lumbar support, adjustable height, and breathable material. Ergonomic chairs can cost more but pay off in comfort.</li>
-      <li><strong>Desk Organizer:</strong> Keeps cables and supplies tidy, reducing visual clutter.</li>
-    </ul>
-
-    <h2>Lighting and Environment Optimization</h2>
-    <p>Good lighting reduces eye strain and boosts mood. Position your desk near a window for natural light, but avoid glare on screens. Consider a desk lamp with adjustable brightness and color temperature for evening work. Keep your space clutter-free and add personal touches like plants or artwork to make it inspiring.</p>
-    <p><strong>Pro Tip:</strong> Use the 20-20-20 rule: Every 20 minutes, look at something 20 feet away for 20 seconds.</p>
-
-    <h2>Connectivity and Tech Setup</h2>
-    <p>Ensure fast, stable internet (aim for 50+ Mbps). Consider a USB-C hub for connecting multiple devices to your laptop. Wireless peripherals reduce cable clutter and improve flexibility. A good webcam and microphone are essential for video conferencing.</p>
-    <p><strong>Security Note:</strong> Use a VPN for work-related online activities to protect sensitive data.</p>
-
-    <h2>Our Recommendations from Shopee</h2>
-    <p>Check out the Laptop Stand and Phone Stand from Shopee for affordable, high-quality options that fit any budget. These products offer great value and positive user reviews. We've tested similar items and can attest to their durability and functionality.</p>
-    <a href="#" class="btn btn-orange mb-4">Shop Home Office Accessories</a>
-
-    <h2>Budget Considerations</h2>
-    <p>You don't need to spend thousands to create a great setup. Start with essentials like proper lighting and seating, then add accessories as your budget allows. Many affordable options on Shopee provide excellent quality.</p>
-
-    <h2>Final Thoughts</h2>
-    <p>A well-designed home office setup can boost productivity, reduce fatigue, and make work more enjoyable. Take time to assess your needs and make gradual improvements. Remember, as a Shopee affiliate, we may earn commissions from purchases made through our links, but our recommendations are based on genuine value and user experience.</p>
-    <p>What's your biggest home office challenge? Share your setup tips in the comments!</p>
-  </section>
-
-  <!-- Why Choose Us Section -->
-  <section id="why-choose-us" class="container py-5">
-    <h2 class="fw-bold text-center mb-4">Why Choose Shopee Deals?</h2>
-    <div class="row text-center">
-      <div class="col-md-4 mb-4">
-        <i class="fas fa-star fa-3x text-orange mb-3"></i>
-        <h5>Expert Reviews</h5>
-        <p>Honest, in-depth reviews from real users and experts to help you make informed decisions.</p>
+  <div class="container py-5">
+    <div class="blog-article">
+      <a href="index.html#blog" class="btn-back"><i class="fas fa-arrow-left"></i> Back to Blog</a>
+      <div class="blog-meta">
+        <span><i class="fas fa-calendar-alt"></i> February 24, 2026</span>
+        <span><i class="fas fa-user"></i> Jefferson Doria</span>
+        <span><i class="fas fa-clock"></i> 6 min read</span>
+        <span><i class="fas fa-tag"></i> Home Office</span>
       </div>
-      <div class="col-md-4 mb-4">
-        <i class="fas fa-tags fa-3x text-orange mb-3"></i>
-        <h5>Best Deals</h5>
-        <p>Curated selection of the top products with the best prices and promotions on Shopee.</p>
+      <div class="blog-hero-wrap">
+        <div class="skeleton-overlay" id="hero-skeleton"></div>
+        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&h=400&fit=crop" alt="Home Office Setup" class="loading" id="hero-img" loading="lazy">
       </div>
-      <div class="col-md-4 mb-4">
-        <i class="fas fa-shield-alt fa-3x text-orange mb-3"></i>
-        <h5>Trusted Affiliate</h5>
-        <p>Transparent affiliate links with no hidden fees. We earn commissions to support quality content.</p>
+      <p>Setting up an effective home office is crucial for productivity and well-being. Whether you're working remotely full-time or occasionally, the right accessories can make all the difference. Here's our comprehensive guide to creating the ultimate home office setup.</p>
+
+      <!-- Ergonomics -->
+      <div class="item-card">
+        <div class="item-header">
+          <div class="section-icon"><i class="fas fa-chair"></i></div>
+          <h2>Ergonomics: The Foundation of Comfort</h2>
+        </div>
+        <p>Proper ergonomics prevent strain and injury. Position your monitor at eye level, keep your keyboard and mouse at elbow height with wrists straight, and ensure your feet are flat on the floor. Your chair should support the natural curve of your spine.</p>
+        <div class="tip-box"><strong><i class="fas fa-lightbulb me-1"></i> Key Tip:</strong> Use the 90-90-90 rule — 90-degree angles at your elbows, hips, and knees for the ideal seated posture.</div>
+      </div>
+
+      <!-- Essential Accessories -->
+      <div class="item-card">
+        <div class="item-header">
+          <div class="section-icon"><i class="fas fa-tools"></i></div>
+          <h2>Essential Accessories for Productivity</h2>
+        </div>
+        <ul class="checklist">
+          <li><strong>Laptop Stand</strong> — Elevates your device for better airflow, cooling, and posture. Adjustable height is key.</li>
+          <li><strong>Phone Stand</strong> — Keeps your phone at eye level for video calls, reducing neck strain.</li>
+          <li><strong>External Monitor</strong> — Increases screen real estate for multitasking. A 24–27 inch 1080p+ monitor is ideal.</li>
+          <li><strong>Ergonomic Chair</strong> — Lumbar support, adjustable height, breathable material. Worth the investment.</li>
+          <li><strong>Desk Organizer</strong> — Keeps cables and supplies tidy, reducing visual clutter.</li>
+        </ul>
+        <a href="#" class="btn-shopee"><i class="fas fa-shopping-cart"></i> Shop Home Office Accessories</a>
+      </div>
+
+      <!-- Lighting -->
+      <div class="item-card">
+        <div class="item-header">
+          <div class="section-icon"><i class="fas fa-sun"></i></div>
+          <h2>Lighting and Environment</h2>
+        </div>
+        <p>Good lighting reduces eye strain and boosts mood. Position your desk near a window for natural light, but avoid glare on screens. A desk lamp with adjustable brightness and color temperature is great for evening work. Keep your space clutter-free and add plants or personal touches to make it inspiring.</p>
+        <div class="tip-box"><strong><i class="fas fa-eye me-1"></i> Pro Tip:</strong> Follow the 20-20-20 rule — every 20 minutes, look at something 20 feet away for 20 seconds to reduce eye strain.</div>
+      </div>
+
+      <!-- Connectivity -->
+      <div class="item-card">
+        <div class="item-header">
+          <div class="section-icon"><i class="fas fa-wifi"></i></div>
+          <h2>Connectivity and Tech Setup</h2>
+        </div>
+        <p>Aim for 50+ Mbps internet speed for smooth remote work. A USB-C hub expands your laptop ports for multiple devices. Wireless peripherals reduce cable clutter. A good webcam and dedicated microphone are essential for professional video calls.</p>
+        <div class="tip-box"><strong><i class="fas fa-shield-alt me-1"></i> Security Note:</strong> Always use a VPN for work-related online activities to protect sensitive data.</div>
+      </div>
+
+      <!-- Budget -->
+      <div class="item-card">
+        <div class="item-header">
+          <div class="section-icon"><i class="fas fa-wallet"></i></div>
+          <h2>Budget Considerations</h2>
+        </div>
+        <p>You don't need to spend thousands to create a great setup. Start with essentials like proper lighting and seating, then add accessories as your budget allows. Many affordable options on Shopee provide excellent quality without breaking the bank.</p>
+        <a href="#" class="btn-shopee"><i class="fas fa-external-link-alt"></i> Browse Budget-Friendly Options</a>
+      </div>
+
+      <div class="conclusion-box">
+        <h2><i class="fas fa-lightbulb me-2"></i>Final Thoughts</h2>
+        <p>A well-designed home office setup can boost productivity, reduce fatigue, and make work more enjoyable. Take time to assess your needs and make gradual improvements.</p>
+        <p class="mb-0">As a Shopee affiliate, we may earn commissions from purchases through our links — but our recommendations are based on genuine value and user experience. What's your biggest home office challenge?</p>
       </div>
     </div>
-  </section>
 
-  <!-- Footer -->
-  <footer class="bg-white text-center py-3 border-top">
-    <p class="mb-2 text-muted">&copy; 2026 Shopee Deals. Powered by Affiliate Links. | Owner: Jefferson Doria</p>
+    <section id="why-choose-us" class="mt-5">
+      <h2 class="fw-bold text-center mb-4">Why Choose Deals Scout PH?</h2>
+      <div class="row text-center">
+        <div class="col-md-4 mb-4"><i class="fas fa-star fa-3x text-orange mb-3"></i><h5>Expert Reviews</h5><p>Honest, in-depth reviews from real users and experts to help you make informed decisions.</p></div>
+        <div class="col-md-4 mb-4"><i class="fas fa-tags fa-3x text-orange mb-3"></i><h5>Best Deals</h5><p>Curated selection of the top products with the best prices and promotions available on Shopee.</p></div>
+        <div class="col-md-4 mb-4"><i class="fas fa-shield-alt fa-3x text-orange mb-3"></i><h5>Trusted Affiliate</h5><p>Transparent affiliate links with no hidden fees. We earn commissions to support quality content.</p></div>
+      </div>
+    </section>
+  </div>
+
+  <footer class="bg-white text-center py-4 border-top mt-4">
+    <p class="mb-2 text-muted">&copy; 2026 Deals Scout PH. Powered by Affiliate Links. | Owner: Jefferson Doria</p>
     <p class="mb-0">
       <a href="privacy-policy.html" class="text-muted me-3">Privacy Policy</a>
       <a href="terms-of-service.html" class="text-muted me-3">Terms of Service</a>
@@ -134,8 +188,18 @@
     </p>
   </footer>
 
-  <!-- Bootstrap JS -->
+  <button id="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const img = document.getElementById('hero-img');
+    const skeleton = document.getElementById('hero-skeleton');
+    const reveal = () => { img.classList.remove('loading'); skeleton.classList.add('hidden'); };
+    if (img.complete && img.naturalWidth > 0) reveal();
+    else { img.addEventListener('load', reveal); img.addEventListener('error', reveal); }
+    const btn = document.getElementById('back-to-top');
+    window.addEventListener('scroll', () => btn.classList.toggle('visible', window.pageYOffset > 300));
+    btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  </script>
 </body>
-</html></content>
-<parameter name="filePath">c:\shopee-affiliate\blog3.html
+</html>
