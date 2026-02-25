@@ -1,50 +1,114 @@
 [
   {
     "name": "Mechanical Keyboard",
-    "description": "High-quality mechanical keyboard with RGB lights.",
-    "image": "https://via.placeholder.com/300x200.png?text=Keyboard",
-    "link": "#"
+    "description": "High-quality mechanical keyboard with RGB lights for gaming and productivity.",
+    "image": "https://images.unsplash.com/photo-1541140532154-b024d705b90a?w=300&h=200&fit=crop",
+    "link": "https://shopee.ph/search?keyword=mechanical%20keyboard",
+    "category": "gadgets"
   },
   {
     "name": "Wireless Mouse",
-    "description": "Ergonomic wireless mouse for smooth gaming and work.",
-    "image": "https://via.placeholder.com/300x200.png?text=Mouse",
-    "link": "#"
+    "description": "Ergonomic wireless mouse for smooth gaming and work, with long battery life.",
+    "image": "https://images.unsplash.com/photo-1527814050087-3793815479db?w=300&h=200&fit=crop",
+    "link": "https://shopee.ph/search?keyword=wireless%20mouse",
+    "category": "accessories"
   },
   {
     "name": "Smartwatch",
-    "description": "Track your fitness and notifications easily.",
-    "image": "https://via.placeholder.com/300x200.png?text=Smartwatch",
-    "link": "#"
+    "description": "Track your fitness, notifications, and more with this stylish smartwatch.",
+    "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=300&h=200&fit=crop",
+    "link": "https://shopee.ph/search?keyword=smartwatch",
+    "category": "fitness"
   },
   {
     "name": "Phone Stand",
-    "description": "Adjustable stand for your phone or tablet.",
-    "image": "https://via.placeholder.com/300x200.png?text=Phone+Stand",
-    "link": "#"
+    "description": "Adjustable stand for your phone or tablet, perfect for video calls or reading.",
+    "image": "https://images.unsplash.com/photo-1589492477829-5e65395b66cc?w=300&h=200&fit=crop",
+    "link": "https://shopee.ph/search?keyword=phone%20stand",
+    "category": "home"
   },
   {
     "name": "Bluetooth Speaker",
-    "description": "Portable speaker with powerful sound.",
-    "image": "https://via.placeholder.com/300x200.png?text=Speaker",
-    "link": "#"
+    "description": "Portable speaker with powerful sound and waterproof design.",
+    "image": "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=300&h=200&fit=crop",
+    "link": "https://shopee.ph/search?keyword=bluetooth%20speaker",
+    "category": "accessories"
   },
   {
     "name": "Headphones",
-    "description": "Noise-cancelling over-ear headphones.",
-    "image": "https://via.placeholder.com/300x200.png?text=Headphones",
-    "link": "#"
+    "description": "Noise-cancelling over-ear headphones for immersive audio.",
+    "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300&h=200&fit=crop",
+    "link": "https://shopee.ph/search?keyword=headphones",
+    "category": "accessories"
   },
   {
     "name": "USB-C Hub",
-    "description": "Expand your laptop ports with this hub.",
-    "image": "https://via.placeholder.com/300x200.png?text=USB-C+Hub",
-    "link": "#"
+    "description": "Expand your laptop ports with this versatile hub.",
+    "image": "https://images.unsplash.com/photo-1625842268584-8f3296236761?w=300&h=200&fit=crop",
+    "link": "https://shopee.ph/search?keyword=usb-c%20hub",
+    "category": "gadgets"
   },
   {
     "name": "Laptop Stand",
-    "description": "Ergonomic laptop stand for comfortable typing.",
-    "image": "https://via.placeholder.com/300x200.png?text=Laptop+Stand",
-    "link": "#"
+    "description": "Ergonomic laptop stand for comfortable typing and better airflow.",
+    "image": "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=300&h=200&fit=crop",
+    "link": "https://shopee.ph/search?keyword=laptop%20stand",
+    "category": "home"
+  },
+  {
+    "name": "Tablet",
+    "description": "Versatile tablet for work, entertainment, and creativity on the go.",
+    "image": "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=300&h=200&fit=crop",
+    "link": "https://shopee.ph/search?keyword=tablet",
+    "category": "gadgets"
+  },
+  {
+    "name": "Wireless Earbuds",
+    "description": "High-quality wireless earbuds with noise cancellation and long battery.",
+    "image": "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=300&h=200&fit=crop",
+    "link": "https://shopee.ph/search?keyword=wireless%20earbuds",
+    "category": "accessories"
+  },
+  {
+    "name": "Webcam",
+    "description": "HD webcam for clear video calls and streaming.",
+    "image": "https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=300&h=200&fit=crop",
+    "link": "https://shopee.ph/search?keyword=webcam",
+    "category": "gadgets"
+  },
+  {
+    "name": "Desk Lamp",
+    "description": "Adjustable LED desk lamp with multiple brightness levels.",
+    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=200&fit=crop",
+    "link": "https://shopee.ph/search?keyword=desk%20lamp",
+    "category": "home"
+  },
+  {
+    "name": "Power Bank",
+    "description": "High-capacity power bank to keep your devices charged on the go.",
+    "image": "https://images.unsplash.com/photo-1609592806580-0e5b8c6b0b0a?w=300&h=200&fit=crop",
+    "link": "https://shopee.ph/search?keyword=power%20bank",
+    "category": "accessories"
+  },
+  {
+    "name": "Monitor",
+    "description": "High-resolution monitor for better productivity and gaming.",
+    "image": "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=300&h=200&fit=crop",
+    "link": "https://shopee.ph/search?keyword=monitor",
+    "category": "gadgets"
+  },
+  {
+    "name": "Office Chair",
+    "description": "Ergonomic office chair with lumbar support for long hours.",
+    "image": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=300&h=200&fit=crop",
+    "link": "https://shopee.ph/search?keyword=office%20chair",
+    "category": "home"
+  },
+  {
+    "name": "Dumbbells",
+    "description": "Adjustable dumbbells for home workouts and strength training.",
+    "image": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=300&h=200&fit=crop",
+    "link": "https://shopee.ph/search?keyword=dumbbells",
+    "category": "fitness"
   }
 ]
